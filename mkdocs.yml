@@ -9,28 +9,21 @@ repo_url: https://github.com/Seminarkurs-Lernapp-Mathematik/slam-app
 repo_name: GitHub # Text neben dem Icon
 
 theme:
-  name: material
-  language: de
-  palette:
-    # Light Mode
-    - scheme: default
-      primary: teal
-      accent: purple
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    # Dark Mode
-    - scheme: slate
-      primary: teal
-      accent: lime
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
+  name: shadcn
+  # Optional: Logo/Favicon, falls du welche hast
+  # logo: assets/logo.png
+  # favicon: assets/favicon.png
+
+  # Features aktivieren (ähnlich wie bei Material)
   features:
-    - navigation.instant # Lädt Seiten ohne Refresh
-    - navigation.sections # Gruppiert die Sidebar
+    - navigation.instant
+    - navigation.tabs # Top-Navigation statt Sidebar (geschmackssache)
     - search.suggest
     - search.highlight
+
+# Plugins, die das Theme unterstützt/benötigt
+plugins:
+  - search
 
 markdown_extensions:
   - pymdownx.highlight:
