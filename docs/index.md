@@ -1,3 +1,5 @@
-# Willkommen
+# Willkommen bei der SLaM-Dokumentation! 🖐️
 
-Das ist die Dokumentation für meine App.
+<font color="grey">_**S**eminarkurs **L**ern**a**pp **M**athematik_</font>
+
+<a href="/getting-started"><button>Los geht's!</button></a>
