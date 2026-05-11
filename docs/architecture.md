@@ -79,19 +79,21 @@ Request → CORS → Rate Limiter → Validator → Logger → Handler → Respo
 
 ### 3. AI Layer (KI-Orchestrierung)
 
-**Multi-Model-Strategie**
-- **Task-basierte Modellauswahl**: Jede API-Operation nutzt das optimale Modell
-- **Konfiguration**: `models.json` (zentral, versioniert)
-- **Fallback-Mechanismen**: Automatischer Wechsel bei Modell-Ausfall
+**Multi-Provider-Strategie**
+SLaM nutzt ein dynamisches Multi-Provider-Setup (Anthropic, Google Gemini, Mistral, OpenAI, OpenRouter), das über die `models.json` zentral im Backend orchestriert wird (`callAI.ts`).
+- **Task-basierte Modellauswahl**: Jede API-Operation nutzt das optimale Modell (z. B. Claude Sonnet 4.6 für Didaktik, Gemini 3.2 Flash für Echtzeit-Bewertungen).
+- **Fallback-Mechanismen**: Automatischer Wechsel bei Modell-Ausfall (`allowFallbackOnError`), standardmäßig auf `gemini-3.2-flash`.
+- **Zentrale Konfiguration**: `models.json` erlaubt Modellwechsel ohne Code-Deployments.
 
-**Modell-Mapping**:
+**Strategische Modell-Aufteilung**:
 
-| Task | Modell | Begründung |
+| Task | Provider / Modell | Begründung |
 |------|--------|------------|
-| `generateQuestions` | Claude Sonnet 4.6 | Höchste Qualität für komplexe Fragen |
-| `evaluateAnswer` | Claude Haiku 4.5 | Schnell, präzise für Bewertungen |
-| `customHint` | Gemini Flash 3 | Niedrige Latenz für Echtzeit-Hints |
-| `generateGeogebra` | Claude Sonnet 4.6 | Komplexe Code-Generierung |
+| `generateQuestions` | Anthropic / Claude Sonnet 4.6 | Höchste Qualität für komplexe didaktische Fragen und Code-Generierung. |
+| `evaluateAnswer` | Google / Gemini 3.2 Flash | Extrem niedrige Latenz für echtzeitnahe Evaluationen. |
+| `customHint` | Google / Gemini 3.2 Flash | Schnelle Generierung progressiver, sanfter Hinweise. |
+| `generateGeogebra` | Mistral / Mistral Medium 3.5 | Spezifische Eignung für strikte GeoGebra-Scripting-Syntax. |
+| `aiAssessment` | Anthropic / Claude Sonnet 4.6 | Generierung tiefgründiger XAI (Explainable AI) JSON-Auswertungen für Lehrkräfte. |
 
 ### 4. Data Layer (Persistenz)
 
@@ -140,6 +142,41 @@ sequenceDiagram
 2. **Edge Computing**: < 50ms Latenz durch globale Verteilung
 3. **Batch Processing**: Bis zu 20 Fragen pro Request
 4. **Lazy Loading**: Fragen werden im Hintergrund nachgeladen
+
+### HTTP 202 Async-Polling Pattern (Background Jobs)
+
+Für langlaufende KI-Operationen (z. B. Generierung von interaktiven HTML/JS Mini-Apps oder GeoGebra Applets), bei denen die Ausführungszeit das Timeout des Clients oder der Edge-Plattform überschreiten könnte, wird ein asynchrones Polling-Muster verwendet.
+
+```mermaid
+sequenceDiagram
+    participant App as Flutter App (AI_Service)
+    participant Edge as API Router (Hono)
+    participant Worker as Background Worker
+    participant DB as Firestore (asyncJobs)
+    
+    App->>Edge: POST /api/generate-mini-app-async
+    Edge->>DB: Erstelle Job (status: 'pending')
+    Edge->>Worker: Trigger Background Task (event.waitUntil)
+    Edge-->>App: 202 Accepted { jobId: "job_123" }
+    
+    loop Polling (alle 3 Sekunden)
+        App->>Edge: GET /api/jobs/job_123
+        Edge->>DB: Lese Job-Status
+        Edge-->>App: 200 OK { status: 'pending' }
+    end
+    
+    Worker->>Worker: Generiere Mini-App (Claude 4.6)
+    Worker->>DB: Update Job (status: 'done', result: {...})
+    
+    App->>Edge: GET /api/jobs/job_123
+    Edge->>DB: Lese Job-Status
+    Edge-->>App: 200 OK { status: 'done', result: {...} }
+    App->>App: Update UI & Stoppe Polling
+```
+
+**Vorteile der Architektur:**
+- **Non-blocking UI**: Die Flutter-App (mittels `generateMiniAppWithPolling` in `ai_service.dart`) friert nicht ein und kann den Status an den Nutzer melden.
+- **Sicherheit**: Die Collection `/asyncJobs/{jobId}` ist per `firestore.rules` für den direkten Client-Lesezugriff gesperrt (`allow read, write: if false;`). Nur das Backend darf Jobs aktualisieren und auslesen.
 
 ### Authentifizierung & Autorisierung
 

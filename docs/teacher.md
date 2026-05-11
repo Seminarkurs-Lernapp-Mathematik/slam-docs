@@ -301,7 +301,7 @@ function LiveMonitor() {
 
 **Auto-Refresh**: Daten werden alle 30 Sekunden automatisch aktualisiert.
 
-### 2. Analytik-Dashboard
+### 2. Analytik-Dashboard & Explainable AI (XAI)
 
 **Aggregierte Statistiken** für eine Klasse:
 
@@ -326,10 +326,38 @@ function Analytik() {
 }
 ```
 
+#### Explainable AI (XAI) für Lehrkräfte
+Das Backend nutzt *Claude Sonnet 4.6* zur Generierung strukturierter XAI-Auswertungen (`aiAssessment`), um KI-Entscheidungen für Lehrkräfte transparent zu machen.
+Statt pauschaler Aussagen liefert das System ein **strukturiertes JSON**, das wie folgt aufgebaut ist:
+```json
+{
+  "strengths": [
+    "Sichere Anwendung der Potenzregel bei ganzzahligen Exponenten."
+  ],
+  "weaknesses": [
+    "Häufige Vorzeichenfehler beim Auflösen von Klammern."
+  ],
+  "evidence": [
+    {
+      "questionId": "q_789",
+      "topic": "Termumformungen",
+      "userAnswer": "-(x - 3) = -x - 3",
+      "note": "Fehlerhafte Vorzeichenumkehr"
+    }
+  ],
+  "confidence": 0.85
+}
+```
+**Vorteile**:
+- **Evidenzbasiert**: Jede `strength` und `weakness` wird durch konkrete Schülerantworten (`evidence`) belegt.
+- **Transparenz**: Lehrkräfte können den Gedankengang der KI nachvollziehen (`confidence`-Score).
+- **Aktionierbar**: Erlaubt gezieltes Einschreiten bei fachlichen Lücken.
+
 **Visualisierungen**:
 - Genauigkeit pro Thema (Bar Chart)
 - Aktivitätsverlauf (Line Chart)
 - Streak-Verteilung (Histogram)
+- Individuelle XAI-Schülerprofile (Modal)
 
 ### 3. Klassenverwaltung
 

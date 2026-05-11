@@ -185,6 +185,27 @@ AIService aiService(Ref ref) { ... }
 
 **Ergebnis**: 0 Deprecation Warnings, 100% moderne API-Nutzung.
 
+## Kern-Algorithmen und Features
+
+### Cold-Start Diagnose-Quiz
+
+Um neuen Schülern vom ersten Moment an eine passgenaue Lernkurve zu bieten, durchlaufen diese im Onboarding-Prozess ein **Diagnose-Quiz**.
+- **Ziel**: Initiale Feststellung des Anforderungsbereichs (AFB I - Reproduktion, AFB II - Reorganisation, AFB III - Transferleistung).
+- **Ablauf**: Das Quiz präsentiert adaptiv Mathematikaufgaben (aus `initialKnowledge`). Basierend auf der Präzision und Lösungsgeschwindigkeit wird der initiale Schwierigkeitsgrad und der Einstiegs-AFB für zukünftige, KI-generierte Fragenpakete (`generateQuestions`) festgelegt.
+- **Speicherung**: Die Resultate werden in der Subcollection `/users/{userId}/initialKnowledge/` gesichert.
+
+### Adaptiver Auto-Modus & Spaced Repetition (SM-2)
+
+SLaM nutzt wissenschaftlich fundierte Lernmethoden zur Optimierung der Gedächtnisleistung:
+
+1. **Auto Mode (`updateAutoMode`)**:
+   Das Backend analysiert zyklisch die jüngsten Leistungsmetriken (Genauigkeit, benötigte Hinweise, Lösungsdauer). Eine Hintergrund-KI (`gemini-3.2-flash`) passt basierend darauf den Schwierigkeitsgrad, die Komplexität und den Detailgrad zukünftiger Fragen automatisch an.
+2. **Spaced Repetition (`manageMemories`)**:
+   Die App implementiert den **SuperMemo-2 (SM-2)** Algorithmus.
+   - Eine Frage wird nach Beantwortung qualitativ von 0-5 eingestuft.
+   - Der Algorithmus berechnet daraus den neuen `easeFactor` (min. 1.3, initial 2.5) und das Zeit-Intervall in Tagen (`interval`) bis zur nächsten Wiederholung.
+   - **Aufruf**: Über das Endpoint `/api/manage-memories` (z.B. Action `get-due`) ruft die App fällige Wiederholungsaufgaben ab, um den Lernplan des Schülers optimal zu strukturieren.
+
 ## Datenfluss
 
 ### Unidirectional Data Flow
@@ -227,6 +248,15 @@ class QuestionSession extends _$QuestionSession {
 
 // 5. UI Rebuild (automatisch durch Riverpod)
 ```
+
+### HTTP 202 Background Job Polling
+
+Für langlaufende KI-Aufgaben wie die Generierung von Mini-Apps oder GeoGebra Applets (KI-Labor) wird ein asynchrones HTTP-Polling implementiert, um die Flutter UI reaktiv zu halten:
+
+1. **Trigger**: `generateMiniAppAsync` sendet einen POST Request und erhält sofort einen `202 Accepted` Status samt `jobId`.
+2. **Polling-Loop**: Die Funktion `generateMiniAppWithPolling` ruft periodisch (z.B. alle 3 Sekunden) den Endpunkt `GET /api/jobs/{jobId}` ab.
+3. **UI-Update**: Über einen Callback (`onStatusUpdate`) wird die Benutzeroberfläche über den aktuellen Status (`pending`, `done`, `error`) informiert.
+4. **Completion**: Sobald der Job-Status auf `done` wechselt, wird das Ergebnis (JSON) zurückgegeben und das UI abschließend aktualisiert.
 
 ## Offline-First Caching
 

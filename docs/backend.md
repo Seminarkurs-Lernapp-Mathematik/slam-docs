@@ -234,67 +234,94 @@ log.error('AI call failed', { model: 'claude-sonnet-4-6' }, error);
 - **Production-Safe**: Konfigurierbare Log-Levels
 - **Debuggable**: Stack Traces bei Errors
 
-### 4. Multi-Model AI Orchestration
+### 4. Multi-Provider AI Orchestration
 
-**Problem**: Verschiedene Tasks benötigen unterschiedliche KI-Modelle (Qualität vs. Geschwindigkeit vs. Kosten).
+**Problem**: Verschiedene Tasks benötigen unterschiedliche KI-Modelle (Qualität vs. Geschwindigkeit vs. Kosten). Zudem können Anbieter-Ausfälle den Service unterbrechen.
 
-**Lösung**: Zentrale Konfiguration mit task-basierter Modellauswahl.
+**Lösung**: Zentrale Konfiguration (`models.json`) mit task-basierter Modellauswahl, Fallback-Logik und einer generischen `callAI.ts`-Schnittstelle.
 
 **Konfiguration** (`models.json`):
 ```json
 {
+  "version": "3.0.0",
+  "providers": {
+    "gemini": { "name": "Google Gemini" },
+    "claude": { "name": "Anthropic Claude" },
+    "mistral": { "name": "Mistral AI" }
+  },
   "tasks": {
     "generateQuestions": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "model": "claude-sonnet-4-6-20260301",
       "temperature": 0.7,
       "maxTokens": 8000,
       "systemPrompt": "Du bist ein erfahrener Mathematiklehrer..."
     },
     "evaluateAnswer": {
-      "provider": "anthropic",
-      "model": "claude-haiku-4-5",
+      "provider": "gemini",
+      "model": "gemini-3.2-flash",
       "temperature": 0.3,
       "maxTokens": 2000
     },
-    "customHint": {
-      "provider": "google",
-      "model": "gemini-flash-3",
-      "temperature": 0.5,
-      "maxTokens": 1000
+    "generateGeogebra": {
+      "provider": "mistral",
+      "model": "mistral-medium-3.5",
+      "temperature": 0.4
     }
+  },
+  "features": {
+    "allowFallbackOnError": true,
+    "fallbackProvider": "gemini",
+    "fallbackModel": "gemini-3.2-flash"
   }
 }
 ```
 
 **Implementierung** (`src/utils/callAI.ts`):
 ```typescript
-export function getTaskModelConfig(taskName: string): TaskConfig {
-  const config = modelsConfig.tasks[taskName];
-  if (!config) {
-    throw new Error(`No model config for task: ${taskName}`);
+export async function callAIForTask(
+  taskName: string,
+  prompt: string,
+  env: Env,
+  systemPromptOverride?: string
+): Promise<{ response: string; provider: string; model: string }> {
+  const config = await getTaskModelConfig(taskName);
+  const systemPrompt = systemPromptOverride ?? config.systemPrompt;
+
+  try {
+    const response = await callAI({
+      provider: config.provider,
+      model: config.model,
+      prompt,
+      temperature: config.temperature,
+      maxTokens: config.maxTokens,
+      systemPrompt,
+      env,
+    });
+    return { response, provider: config.provider, model: config.model };
+  } catch (error) {
+    const modelConfig = await loadModelConfig();
+    if (modelConfig.features.allowFallbackOnError && config.provider !== modelConfig.features.fallbackProvider) {
+      // Automatischer Fallback auf z.B. gemini-3.2-flash
+      const fallbackResponse = await callAI({
+        provider: modelConfig.features.fallbackProvider,
+        model: modelConfig.features.fallbackModel,
+        prompt,
+        // ...
+      });
+      return { response: fallbackResponse, provider: modelConfig.features.fallbackProvider, model: modelConfig.features.fallbackModel };
+    }
+    throw error;
   }
-  return config;
-}
-
-export async function callAI(params: AICallParams): Promise<string> {
-  const { provider, model, prompt, temperature, maxTokens, env } = params;
-
-  if (provider === 'anthropic') {
-    return callClaude({ model, prompt, temperature, maxTokens, env });
-  } else if (provider === 'google') {
-    return callGemini({ model, prompt, temperature, maxTokens, env });
-  }
-
-  throw new Error(`Unknown provider: ${provider}`);
 }
 ```
 
-**Vorteile**:
-- **Zentral**: Eine Datei für alle Modell-Konfigurationen
-- **Flexibel**: Modellwechsel ohne Code-Änderungen
-- **Optimiert**: Jeder Task nutzt das beste Modell
-- **Testbar**: Mock-Konfigurationen für Tests
+**Zusätzliche Funktionen**:
+- `callVisionAI`: Unterstützt Multimodalität (z. B. `gemini-3.1-pro` für Bildanalyse von handgeschriebenen Rechnungen).
+- **Vorteile**:
+  - **Zentral**: Eine Datei für alle Modell-Konfigurationen
+  - **Ausfallsicher**: Automatisches Fallback-System bei API-Timeouts
+  - **Flexibel**: DRY-Prinzip durch eine universelle REST-Signatur für kompatible APIs (OpenAI/Mistral/OpenRouter).
 
 ## API-Endpoints
 
