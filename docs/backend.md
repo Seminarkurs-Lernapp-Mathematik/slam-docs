@@ -323,6 +323,39 @@ export async function callAIForTask(
   - **Ausfallsicher**: Automatisches Fallback-System bei API-Timeouts
   - **Flexibel**: DRY-Prinzip durch eine universelle REST-Signatur für kompatible APIs (OpenAI/Mistral/OpenRouter).
 
+### 5. Security Middleware (`requireTeacher`)
+
+**Problem**: Bestimmte Endpoints dürfen nur von Lehrkräften aufgerufen werden, um Datenschutz und Systemintegrität zu gewährleisten.
+
+**Lösung**: Eine Middleware, die das Firebase ID-Token verifiziert und das Custom Claim `role: "teacher"` prüft.
+
+**Implementierung**:
+```typescript
+export const requireTeacher = async (c: Context, next: Next) => {
+  const authHeader = c.req.header('Authorization');
+  if (!authHeader?.startsWith('Bearer ')) {
+    return c.json({ error: 'Unauthorized' }, 401);
+  }
+
+  const token = authHeader.split(' ')[1];
+  try {
+    const decodedToken = await adminAuth.verifyIdToken(token);
+    if (decodedToken.role !== 'teacher') {
+      return c.json({ error: 'Forbidden: Teacher role required' }, 403);
+    }
+    c.set('user', decodedToken);
+    await next();
+  } catch (error) {
+    return c.json({ error: 'Invalid token' }, 401);
+  }
+};
+```
+
+**Verwendung**:
+```typescript
+app.get('/api/teacher/analytics', requireTeacher, handleAnalytics);
+```
+
 ## API-Endpoints
 
 ### Schüler-Endpoints
@@ -436,6 +469,148 @@ Bewertet eine Schülerantwort mit KI-gestütztem Feedback.
   "score": 100,
   "feedback": "Perfekt! Die Ableitung ist korrekt.",
   "detailedFeedback": "Du hast die Potenzregel korrekt angewendet: (x^n)' = n·x^(n-1)."
+}
+```
+
+#### POST /api/generate-mini-app
+
+Generiert eine interaktive HTML/JS Mini-App (KI-Labor). Da dies ein langlaufender Prozess ist, wird ein Job-System verwendet.
+
+**Request**:
+```json
+{
+  "topic": "Winkelsumme im Dreieck",
+  "description": "Eine App, bei der man die Ecken eines Dreiecks ziehen kann und die Winkel angezeigt werden."
+}
+```
+
+**Response**:
+```json
+{
+  "success": true,
+  "jobId": "job_1714215045_mini_app"
+}
+```
+
+#### POST /api/generate-geogebra
+
+Generiert ein GeoGebra-Skript (GGB) basierend auf einer Aufgabenstellung.
+
+**Request**:
+```json
+{
+  "prompt": "Erstelle ein Dreieck mit den Punkten A(1,1), B(4,1) und C(2,5)."
+}
+```
+
+**Response**:
+```json
+{
+  "success": true,
+  "ggbScript": "Polygon[(1,1), (4,1), (2,5)]",
+  "jobId": "job_1714215045_ggb"
+}
+```
+
+#### GET /api/jobs/:jobId
+
+Pollt den Status eines asynchronen KI-Jobs.
+
+**Response (Pending)**:
+```json
+{
+  "status": "pending",
+  "progress": 45
+}
+```
+
+**Response (Done)**:
+```json
+{
+  "status": "done",
+  "result": {
+    "html": "<html>...</html>",
+    "js": "console.log('ready');"
+  }
+}
+```
+
+#### POST /api/manage-memories
+
+Verwaltet Spaced Repetition (SM-2) Einträge.
+
+**Request (Action: update)**:
+```json
+{
+  "action": "update",
+  "userId": "abc123",
+  "questionId": "q1",
+  "rating": 4
+}
+```
+
+**Request (Action: get-due)**:
+```json
+{
+  "action": "get-due",
+  "userId": "abc123"
+}
+```
+
+**Response**:
+```json
+{
+  "success": true,
+  "memories": [...]
+}
+```
+
+#### POST /api/update-auto-mode
+
+Passt den Schwierigkeitsgrad des Schülers basierend auf der jüngsten Performance an.
+
+**Request**:
+```json
+{
+  "userId": "abc123",
+  "performanceData": {
+    "accuracy": 0.85,
+    "averageTime": 45,
+    "hintsUsed": 2
+  }
+}
+```
+
+**Response**:
+```json
+{
+  "success": true,
+  "newDifficulty": 6,
+  "reasoning": "Der Schüler hat eine hohe Genauigkeit bei moderater Zeit, daher wird die Schwierigkeit leicht erhöht."
+}
+```
+
+#### POST /api/manage-learning-plan
+
+Synchronisiert die Themen im Lernplan des Schülers.
+
+**Request**:
+```json
+{
+  "userId": "abc123",
+  "action": "sync",
+  "topics": ["Lineare Funktionen", "Quadratische Gleichungen"]
+}
+```
+
+**Response**:
+```json
+{
+  "success": true,
+  "learningPlan": {
+    "lastUpdated": "2026-04-27T10:30:45Z",
+    "topics": [...]
+  }
 }
 ```
 

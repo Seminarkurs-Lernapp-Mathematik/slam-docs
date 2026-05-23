@@ -41,26 +41,26 @@ SLaM transformiert den Mathematikunterricht durch:
 
 **Adaptive Fragengenerierung**
 - Automatische Anpassung an AFB-Niveau (I, II, III)
-- Themenbasierte Lernpläne
+- Themenbasierte Lernpläne mit KI-Kamera-Themenerkennung
 - Multiple-Choice und Step-by-Step Fragen
 - LaTeX-Unterstützung für mathematische Formeln
 
+**4-Säulen-Navigation**
+- **Live Feed**: Adaptiver Aufgaben-Stream basierend auf dem Leistungsstand
+- **Lernplan**: Manuelle Themenwahl und KI-gestützte Themenidentifikation
+- **Apps Hub**: Interaktive Werkzeuge wie GeoGebra, KI-Labor und Bibliothek
+- **Shop**: Gamification-Zentrum für XP, Coins, Streaks und Belohnungen
+
 **Interaktive Lernhilfen**
 - Gestufte Hinweise (3 Stufen)
-- KI-gestützter Chat-Assistent
-- GeoGebra-Visualisierungen
-- Kollaboratives Canvas
+- KI-gestützter Chat-Assistent und kontextuelle Hilfe
+- GeoGebra-Visualisierungen und generierte Mini-Apps
+- Qualitatives Feedback zu freien Antworten
 
-**Gamification**
-- XP-System mit Leveln
-- Coins für Belohnungen
-- Streak-System mit Freeze-Käufen
-- Unlockable Themes
-
-**Spaced Repetition**
-- Automatische Wiederholungsplanung
-- Gedächtnismodell nach SM-2 Algorithmus
-- Personalisierte Wiederholungsintervalle
+**Gamification & Spaced Repetition**
+- XP-System, Coins und tägliche Streaks
+- Gedächtnismodell nach SM-2 Algorithmus (Rating 0-5)
+- Automatische Wiederholungsplanung fälliger Aufgaben
 
 ### Für Lehrkräfte
 

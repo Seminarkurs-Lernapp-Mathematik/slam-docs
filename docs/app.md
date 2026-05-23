@@ -70,13 +70,13 @@ lib/
 │       ├── error_handler.dart   # Global Error Handler
 │       └── security_utils.dart  # Input Sanitization
 ├── features/
-│   ├── auth/                    # Login, Register, Email Verification
-│   ├── home/                    # Main Navigation (3 Tabs)
-│   ├── live_feed/               # Adaptive Question Feed
-│   ├── learning_plan/           # Lernplan Topic Picker
+│   ├── auth/                    # Login, Register, Domain Restriction
+│   ├── home/                    # Main Navigation (4 Tabs)
+│   ├── live_feed/               # Adaptive Question Feed (Tab 1)
+│   ├── learning_plan/           # Topic Picker + AI Camera detection (Tab 2)
+│   ├── apps/                    # Apps Hub, GeoGebra, KI-Labor, Library (Tab 3)
+│   ├── gamification/            # XP, Coins, Streaks, Shop (Tab 4)
 │   ├── question_session/        # Step-by-Step Question Answering
-│   ├── apps/                    # AppsHub, GeoGebra, KI-Labor
-│   ├── gamification/            # XP, Coins, Streaks, Shop
 │   └── settings/                # Theme, Education Level, Debug Panel
 └── shared/widgets/              # Reusable Widgets
 ```
@@ -201,10 +201,17 @@ SLaM nutzt wissenschaftlich fundierte Lernmethoden zur Optimierung der Gedächtn
 1. **Auto Mode (`updateAutoMode`)**:
    Das Backend analysiert zyklisch die jüngsten Leistungsmetriken (Genauigkeit, benötigte Hinweise, Lösungsdauer). Eine Hintergrund-KI (`gemini-3.2-flash`) passt basierend darauf den Schwierigkeitsgrad, die Komplexität und den Detailgrad zukünftiger Fragen automatisch an.
 2. **Spaced Repetition (`manageMemories`)**:
-   Die App implementiert den **SuperMemo-2 (SM-2)** Algorithmus.
-   - Eine Frage wird nach Beantwortung qualitativ von 0-5 eingestuft.
-   - Der Algorithmus berechnet daraus den neuen `easeFactor` (min. 1.3, initial 2.5) und das Zeit-Intervall in Tagen (`interval`) bis zur nächsten Wiederholung.
-   - **Aufruf**: Über das Endpoint `/api/manage-memories` (z.B. Action `get-due`) ruft die App fällige Wiederholungsaufgaben ab, um den Lernplan des Schülers optimal zu strukturieren.
+   Die App implementiert den **SuperMemo-2 (SM-2)** Algorithmus zur Optimierung von Wiederholungsintervallen.
+   - **Rating `q`**: Nach jeder Aufgabe gibt der Nutzer ein qualitatives Feedback von 0 (komplett vergessen) bis 5 (perfekt erinnert).
+   - **Ease Factor (EF)**: Der EF wird nach jeder Beantwortung angepasst:
+     `EF' = EF + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02))`
+     - Der minimale EF beträgt 1.3.
+     - Der initiale EF ist 2.5.
+   - **Intervall-Berechnung `I(n)`**:
+     - `I(1) = 1` (Tag)
+     - `I(2) = 6` (Tage)
+     - `I(n) = I(n-1) * EF` für n > 2.
+   - **Synchronisation**: Über den Endpoint `/api/manage-memories` (Action `update`) werden diese Werte im Backend persistiert und via `get-due` fällige Aufgaben für den aktuellen Tag abgerufen.
 
 ## Datenfluss
 
