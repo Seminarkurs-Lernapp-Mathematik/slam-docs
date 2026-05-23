@@ -6,47 +6,22 @@ SLaM folgt einer modernen **3-Tier-Architektur** mit strikter Trennung von Präs
 
 ## Architekturdiagramm
 
+### High-Level Übersicht (Mermaid)
+
 ```mermaid
 graph TB
-    subgraph "Client Layer"
-        A[Flutter App<br/>iOS/Android/Web]
-        B[React Teacher Platform<br/>Web]
-    end
-    
-    subgraph "Edge Layer - Cloudflare Workers"
-        C[Hono API Router]
-        D[Rate Limiter]
-        E[Validation Middleware]
-        F[Structured Logger]
-    end
-    
-    subgraph "AI Layer"
-        G[Claude Sonnet 4.6]
-        H[Claude Haiku 4.5]
-        I[Gemini Pro 3]
-        J[Gemini Flash 3]
-    end
-    
-    subgraph "Data Layer"
-        K[Cloud Firestore]
-        L[Firebase Auth]
-        M[Question Cache]
-    end
-    
-    A -->|HTTPS/REST| C
-    B -->|HTTPS/REST| C
-    C --> D
-    D --> E
-    E --> F
-    F -->|AI Requests| G
-    F -->|AI Requests| H
-    F -->|AI Requests| I
-    F -->|AI Requests| J
-    F -->|CRUD| K
-    A -->|Auth| L
-    B -->|Auth| L
-    K -->|Cache| M
+...
 ```
+
+### Interaktiver Architektur-Graph
+
+Für eine detaillierte, explorative Sicht auf die tatsächliche Code-Struktur und die Abhängigkeiten zwischen den Komponenten steht ein interaktiver Graph zur Verfügung:
+
+<div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin: 20px 0;">
+  <iframe src="technical/architecture-graph.html" width="100%" height="600px" style="border: none;"></iframe>
+</div>
+
+[Vollbild-Ansicht öffnen](technical/architecture-graph.html)
 
 ## Schichtenmodell
 
