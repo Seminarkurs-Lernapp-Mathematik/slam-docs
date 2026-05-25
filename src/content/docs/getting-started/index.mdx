@@ -1,0 +1,36 @@
+---
+title: Erste Schritte
+description: Einstieg in die SLAM-Dokumentation – wähle deinen Pfad.
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Willkommen in der SLAM-Dokumentation! Wähle den Einstieg, der zu dir passt:
+
+<CardGrid>
+  <LinkCard
+    title="Ich bin Schüler:in"
+    description="Account anlegen, Klassenstufe wählen, erste Aufgabe lösen."
+    href="/getting-started/schueler/"
+  />
+  <LinkCard
+    title="Ich bin Lehrkraft"
+    description="Klasse anlegen, Schüler:innen einladen, Sitzplan und Live-Monitoring."
+    href="/getting-started/lehrer/"
+  />
+  <LinkCard
+    title="Ich bin Entwickler:in"
+    description="Architektur, App-, Backend- und Teacher-Module verstehen."
+    href="/architektur/"
+  />
+</CardGrid>
+
+## Was ist SLAM?
+
+SLAM steht für **Smart Learning and Mathematics**. Es ist ein im Rahmen eines Seminarkurses entwickeltes, KI-gestütztes Lernsystem für Mathematik, das aus drei Komponenten besteht:
+
+- **Schüler-App** (Flutter) – die App zum täglichen Üben
+- **Lehrer-Plattform** (React) – das Web-Dashboard für Lehrkräfte
+- **Backend** (Cloudflare Workers) – die API, die alles verbindet und die KI-Modelle orchestriert
+
+Wenn du nur ausprobieren willst, wie sich die App anfühlt, starte am besten mit dem [Schüler-Quickstart](/getting-started/schueler/).

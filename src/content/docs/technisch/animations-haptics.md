@@ -1,7 +1,10 @@
-# Animations & Haptics System
+---
+title: Animations & Haptics
+description: Animations- und Haptik-System der SLAM-App auf Basis der Design-Tokens.
+---
 
 **Last Updated:** 2026-04-29  
-**Status:** ✅ Implemented
+**Status:** Implemented
 
 ## Overview
 

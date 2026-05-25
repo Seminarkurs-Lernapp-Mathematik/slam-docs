@@ -1,0 +1,91 @@
+---
+title: SLAM
+description: KI-gestützte adaptive Mathe-Lern-App für Klassen 5 bis 13
+template: splash
+hero:
+  tagline: Adaptives Mathe-Lernen mit KI – für Schüler:innen und Lehrkräfte
+  image:
+    file: ../../assets/logo.svg
+  actions:
+    - text: Schüler-Quickstart
+      link: /getting-started/schueler/
+      icon: right-arrow
+      variant: primary
+    - text: Lehrer-Quickstart
+      link: /getting-started/lehrer/
+      icon: right-arrow
+      variant: secondary
+    - text: GitHub
+      link: https://github.com/Seminarkurs-Lernapp-Mathematik
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Was ist SLAM?
+
+**SLAM** (Smart Learning and Mathematics) ist ein KI-gestütztes, adaptives Lernsystem für Mathematik. Es richtet sich an Schüler:innen der Klassenstufen 5–13 und ihre Lehrkräfte und kombiniert moderne Technik mit didaktischen Best Practices.
+
+<CardGrid>
+  <Card title="Adaptiv" icon="rocket">
+    Aufgaben werden in Schwierigkeit und Thema automatisch an das Niveau der Lernenden angepasst.
+  </Card>
+  <Card title="KI-Tutor" icon="comment-alt">
+    Claude und Gemini erklären Schritt für Schritt, geben gestufte Hinweise und beantworten Fragen.
+  </Card>
+  <Card title="Lehrer-Dashboard" icon="bars">
+    Live-Monitoring, Sitzplan, Klassen­verwaltung und Analytik in einer modernen Web-Oberfläche.
+  </Card>
+  <Card title="Spaced Repetition" icon="approve-check-circle">
+    Wiederholung nach dem SM-2-Algorithmus sorgt für nachhaltiges Lernen statt Bulimie-Lernen.
+  </Card>
+  <Card title="Gamification" icon="star">
+    XP, Coins, Streaks und ein Shop motivieren ohne den Lernfokus zu verlieren.
+  </Card>
+  <Card title="DSGVO-Fokus" icon="seti:lock">
+    Privacy-by-Design, EU-Hosting und strikte Datentrennung für den Schulbetrieb.
+  </Card>
+</CardGrid>
+
+## Schnellzugriff
+
+<CardGrid>
+  <LinkCard
+    title="Schüler:innen-Quickstart"
+    description="In 5 Minuten zur ersten Aufgabe – Anmeldung, Lernplan, erste Übung."
+    href="/getting-started/schueler/"
+  />
+  <LinkCard
+    title="Lehrkräfte-Quickstart"
+    description="Klasse anlegen, Schüler:innen einladen, Sitzplan und Live-Feed nutzen."
+    href="/getting-started/lehrer/"
+  />
+  <LinkCard
+    title="Systemarchitektur"
+    description="3-Tier-Architektur, Datenflüsse, KI-Routing zwischen Claude und Gemini."
+    href="/architektur/"
+  />
+  <LinkCard
+    title="Sicherheit & Datenschutz"
+    description="Privacy-by-Design, Defense-in-Depth, Auth und Rate Limiting."
+    href="/sicherheit/"
+  />
+</CardGrid>
+
+## Tech-Stack auf einen Blick
+
+<CardGrid>
+  <Card title="App" icon="seti:flutter">
+    Flutter 3.27+ für iOS, Android und Web.
+  </Card>
+  <Card title="Backend" icon="cloud-download">
+    Cloudflare Workers, serverless, < 50 ms Antwortzeit.
+  </Card>
+  <Card title="Lehrer-Plattform" icon="seti:react">
+    React + Vite, gehostet auf Cloudflare Pages.
+  </Card>
+  <Card title="Datenbank" icon="seti:db">
+    Cloud Firestore mit strikten Security Rules.
+  </Card>
+</CardGrid>

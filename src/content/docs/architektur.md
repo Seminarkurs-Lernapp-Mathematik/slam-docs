@@ -1,4 +1,7 @@
-# Systemarchitektur
+---
+title: Systemarchitektur
+description: 3-Tier-Architektur, Datenflüsse und KI-Routing in SLAM.
+---
 
 ## Überblick
 
@@ -17,11 +20,11 @@ graph TB
 
 Für eine detaillierte, explorative Sicht auf die tatsächliche Code-Struktur und die Abhängigkeiten zwischen den Komponenten steht ein interaktiver Graph zur Verfügung:
 
-<div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin: 20px 0;">
-  <iframe src="../technical/architecture-graph.html" width="100%" height="600px" style="border: none;"></iframe>
+<div style="border: 1px solid var(--sl-color-gray-5); border-radius: 8px; overflow: hidden; margin: 20px 0;">
+  <iframe src="/architecture-graph.html" width="100%" height="600px" style="border: none;"></iframe>
 </div>
 
-[Vollbild-Ansicht öffnen](../technical/architecture-graph.html)
+[Vollbild-Ansicht öffnen](/architecture-graph.html)
 
 ## Schichtenmodell
 

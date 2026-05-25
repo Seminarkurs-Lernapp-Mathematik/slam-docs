@@ -1,4 +1,7 @@
-# Lehrerplattform (slam-teacher)
+---
+title: Lehrerplattform (slam-teacher)
+description: React-basiertes Web-Dashboard mit Live-Monitoring, Sitzplan und Analytik.
+---
 
 ## Überblick
 

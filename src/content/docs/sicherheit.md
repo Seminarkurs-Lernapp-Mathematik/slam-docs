@@ -1,4 +1,7 @@
-# Security & Datenschutz
+---
+title: Sicherheit & Datenschutz
+description: Privacy-by-Design, Defense-in-Depth, Auth, Rate Limiting und DSGVO-Konformität.
+---
 
 ## Überblick
 

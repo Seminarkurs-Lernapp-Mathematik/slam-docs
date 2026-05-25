@@ -1,0 +1,101 @@
+---
+title: Lehrer-Quickstart
+description: Von der ersten Anmeldung zur Live-Klassenübersicht in wenigen Minuten.
+---
+
+import { Steps, Aside, Card, CardGrid } from '@astrojs/starlight/components';
+
+Dieser Leitfaden führt dich durch die Einrichtung einer Klasse auf der SLAM-Lehrerplattform – vom ersten Login bis zum Live-Monitoring im Unterricht.
+
+<Aside type="tip">
+Du brauchst ungefähr **10 Minuten** und einen Laptop oder Desktop mit modernem Browser (Chrome, Firefox, Safari, Edge).
+</Aside>
+
+## Voraussetzungen
+
+- Dienstliche E-Mail-Adresse (z. B. `@deine-schule.de`)
+- Liste deiner Schüler:innen mit Namen und E-Mail-Adressen (CSV oder per Hand)
+- Optional: bereits angelegte Klassen aus dem Schul-System
+
+## Schritt für Schritt
+
+<Steps>
+
+1. ### Lehrer-Plattform öffnen
+
+   Rufe die SLAM-Lehrer-Plattform im Browser auf und klicke auf **„Anmelden als Lehrkraft"**.
+
+   ![Login-Seite der Lehrer-Plattform](/screenshots/teacher-login.png)
+
+2. ### Account verifizieren
+
+   Nach der Registrierung mit deiner dienstlichen E-Mail erhältst du einen Bestätigungs-Link. Lehrer-Accounts werden zusätzlich manuell freigeschaltet – das dauert in der Regel weniger als 24 Stunden.
+
+   ![Verifizierungs-Mail-Screen](/screenshots/teacher-verify.png)
+
+3. ### Klasse anlegen
+
+   Im Dashboard auf **„Neue Klasse"** klicken. Vergib einen Klassennamen (z. B. „9b – Mathe 2025/26"), wähle die Klassenstufe und das Schuljahr.
+
+   ![Klassen-Anlage-Dialog](/screenshots/teacher-create-class.png)
+
+4. ### Schüler:innen einladen
+
+   Du hast zwei Optionen:
+
+   - **Einladungs-Code teilen:** SLAM generiert einen sechsstelligen Code, den deine Schüler:innen in der App eingeben.
+   - **Einzeleinladungen per E-Mail:** Trage Namen und E-Mail manuell ein oder importiere eine CSV-Datei.
+
+   ![Einladungs-Bildschirm mit Code und CSV-Upload](/screenshots/teacher-invite.png)
+
+5. ### Sitzplan erstellen (optional, aber empfohlen)
+
+   Im Tab **„Sitzplan"** kannst du die Klasse per Drag-&-Drop wie im echten Klassenzimmer anordnen. Im Live-Feed siehst du dann auf einen Blick, wer gerade arbeitet und wo es hakt.
+
+   ![Drag-&-Drop-Sitzplan-Editor](/screenshots/teacher-seating.png)
+
+6. ### Live-Feed während des Unterrichts nutzen
+
+   Starte den **Live-Feed**, wenn deine Klasse mit SLAM arbeitet. Du siehst in Echtzeit:
+
+   - wer gerade an welcher Aufgabe ist
+   - wer Hilfe braucht (rote Hand-Symbole)
+   - wie viele Aufgaben bereits gelöst wurden
+
+   ![Live-Feed-Dashboard mit Sitzplan-Ansicht](/screenshots/teacher-live-feed.png)
+
+7. ### Analytik nach der Stunde
+
+   Im Tab **„Analytik"** findest du detaillierte Auswertungen pro Klasse, Schüler:in und Thema. Filtere nach Zeitraum, exportiere als PDF für Eltern­gespräche oder identifiziere Themen, die in der nächsten Stunde Priorität brauchen.
+
+   ![Analytik-Übersicht mit Heatmap](/screenshots/teacher-analytics.png)
+
+</Steps>
+
+## Wichtige Funktionen im Überblick
+
+<CardGrid>
+  <Card title="Live-Monitoring" icon="laptop">
+    Echtzeit-Übersicht, wer gerade an welcher Aufgabe arbeitet und wer Hilfe braucht.
+  </Card>
+  <Card title="Sitzplan" icon="setting">
+    Drag-&-Drop-Anordnung wie im Klassenzimmer – auch für mehrere Klassen.
+  </Card>
+  <Card title="Analytik" icon="bars">
+    Themen-Heatmaps, Streak-Verläufe und Aufgabenstatistiken pro Schüler:in.
+  </Card>
+  <Card title="Aufgaben-Zuweisung" icon="document">
+    Spezifische Themen oder Aufgabenpakete einer Klasse zuweisen.
+  </Card>
+</CardGrid>
+
+## Datenschutz-Hinweise
+
+<Aside type="caution" title="Was du den Eltern sagen kannst">
+SLAM verarbeitet ausschließlich Lerndaten (gelöste Aufgaben, Fehlertypen, Fortschritt). **Keine** Inhalte aus dem KI-Tutor-Chat sind für Lehrkräfte sichtbar. Alle Daten werden in der EU verarbeitet und nach DSGVO-Vorgaben gespeichert. Details findest du im Abschnitt [Sicherheit](/sicherheit/).
+</Aside>
+
+## Nächste Schritte
+
+- [Architektur der Lehrer-Plattform](/komponenten/teacher/)
+- [Sicherheit & Datenschutz im Detail](/sicherheit/)

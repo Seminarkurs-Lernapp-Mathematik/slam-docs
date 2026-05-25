@@ -1,4 +1,7 @@
-# Flutter App (slam-app)
+---
+title: Flutter App (slam-app)
+description: Die Schüler-App von SLAM – Flutter 3.27+, Riverpod, Offline-First.
+---
 
 ## Überblick
 
