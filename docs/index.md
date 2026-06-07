@@ -122,9 +122,18 @@ SLaM transformiert den Mathematikunterricht durch:
 
 ### URLs
 
-- **Schüler-App**: `https://learn-smart.app`
+- **Schüler-App (Web)**: `https://app.learn-smart.app` ⚠️ *Performance-Probleme — native App bevorzugen*
 - **Lehrerplattform**: `https://teacher.learn-smart.app`
 - **Backend API**: `https://api.learn-smart.app`
+
+### Native App installieren
+
+> ⚠️ **Wichtig:** Die Web-Version hat erhebliche Performance-Probleme. Für ein optimales Lernerlebnis wird die native Installation auf Android oder iOS dringend empfohlen.
+
+- **Android**: APK von der [Releases-Seite](https://github.com/Seminarkurs-Lernapp-Mathematik/slam-app/releases) herunterladen und direkt installieren.
+- **iOS**: IPA von der [Releases-Seite](https://github.com/Seminarkurs-Lernapp-Mathematik/slam-app/releases) herunterladen und per Sideloadly ([sideloadly.io](https://sideloadly.io)) auf das iPhone laden.
+
+→ [Detaillierte Installationsanleitung](getting-started/installation.md)
 
 ## Sicherheit
 

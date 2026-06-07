@@ -25,6 +25,17 @@ theme:
 plugins:
   - search
 
+nav:
+  - Übersicht: index.md
+  - Los geht's:
+    - getting-started/index.md
+    - Installation: getting-started/installation.md
+  - Flutter App: app.md
+  - Backend: backend.md
+  - Lehrerplattform: teacher.md
+  - Architektur: architecture.md
+  - Sicherheit: security.md
+
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
