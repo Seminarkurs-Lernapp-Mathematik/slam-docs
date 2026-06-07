@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<script>
+        const base_url = "https://docs.learn-smart.app/"; /* for search plugin notably */
+    </script>
+    <script integrity="sha384-m6cZ+Whl1ci89lidlu8DH4C+sZLNOYBvImtjUIhUK+iaNffXhqtbYgBVuuPfRsa0" src="../js/dark.js"></script>
+
+
+    <meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+    
+
+
+<title>Flutter App</title>
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://docs.learn-smart.app/app/">
+
+
+<!-- Open Graph (Facebook, LinkedIn) -->
+
+<meta property="og:title" content="Flutter App">
+
+
+
+
+
+<meta property="og:url" content="https://docs.learn-smart.app/app/">
+
+
+
+
+
+
+<!-- Twitter Card -->
+
+<meta name="twitter:title" content="Flutter App">
+
+
+
+
+
+
+<!-- JSON-LD Structured Data -->
+
+
+
+    <link href="../img/favicon.ico" rel="icon"/>
+
+    <link href="../css/base.css" rel="stylesheet"/>
+<link href="../css/geist.css" rel="stylesheet"/>
+
+    
+
+    <style>
+        :root {
+            --theme-accent: oklch(62.3% 0.214 259.815);
+        }
+    </style>
+
+    
+
+    <script integrity="sha384-V2jkXRy811qODUbfkLlkVJYBbf4h6XHAEjcU6ReASBPrJvTrlYh4GrI4t6GCju6n" src="../js/callbacks.js"></script>
+
+    
+
+    
+
+    
+
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("a.headerlink").forEach(function (link) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                // Build the full URL with the anchor fragment
+                const url = window.location.origin + window.location.pathname + this.getAttribute("href");
+
+                navigator.clipboard.writeText(url).then(function () {
+                    // Optional: brief visual feedback
+                });
+            });
+        });
+    });
+</script>
+    
+
+    
+    
+</head>
+<body class="text-foreground group/body overscroll-none font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)] theme-default">
+<div class="bg-background relative z-10 flex min-h-svh flex-col" id="inner-body">
+        <header class="bg-background sticky top-0 z-50 w-full" view-transition-name="header">
+    <div class="container-wrapper 3xl:fixed:px-0 px-6">
+        <div class="3xl:fixed:container flex h-(--header-height) items-center gap-2 **:data-[slot=separator]:!h-4">
+            <button id="menu-button" data-slot="popover-trigger" onclick="onMobileMenuButtonClick(event)"
+                class="group whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:text-accent-foreground px-4 py-2 has-[&gt;svg]:px-3 extend-touch-target h-8 touch-manipulation items-center justify-start gap-2.5 !p-0 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 active:bg-transparent dark:hover:bg-transparent flex lg:hidden"
+                type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-«Rmplb»"
+                data-state="closed">
+                <div class="relative flex h-8 w-4 items-center justify-center">
+                    <div class="relative size-4">
+                        <!-- 16px x 16px -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="0" x2="16" y1="5" y2="5"
+                                class="group-data-[state=open]:translate-y-[2.25px] group-data-[state=open]:-translate-x-[2.25px] group-data-[state=open]:rotate-45 transition-all duration-300 origin-center" />
+                            <line x1="0" x2="16" y1="11" y2="11"
+                                class="group-data-[state=open]:-translate-y-[2.25px] group-data-[state=open]:-translate-x-[2.25px] group-data-[state=open]:-rotate-45 transition-all duration-300 origin-center" />
+                        </svg>
+                    </div>
+
+                    <span class="sr-only">Toggle Menu</span>
+                </div>
+                <span class="flex h-8 items-center text-lg leading-none font-medium">Menu</span>
+            </button>
+            <a data-slot="button"
+                class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-5 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 hidden h-8 lg:flex"
+                href="https://docs.learn-smart.app/">
+                <span class="size-8 flex flex-row justify-center items-center">
+                    
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"
+    class="size-5">
+    <rect width="256" height="256" fill="none"></rect>
+    <line x1="208" y1="128" x2="128" y2="208" fill="none" stroke="currentColor" stroke-linecap="round"
+        stroke-linejoin="round" stroke-width="32"></line>
+    <line x1="192" y1="40" x2="40" y2="192" fill="none" stroke="currentColor" stroke-linecap="round"
+        stroke-linejoin="round" stroke-width="32"></line>
+</svg>
+
+
+                </span>
+
+                
+                <h1 class="pr-2">SLAM Docs</h1>
+                
+            </a>
+            
+            <div class="ml-auto flex items-center gap-2 md:flex-1 md:justify-end">
+                <div class="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
+                    <div class="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
+    <button onclick="onSearchBarClick(event)" data-slot="dialog-trigger" data-variant="outline" data-size="default" class="inline-flex shrink-0 items-center gap-2 text-sm whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 border bg-background hover:text-accent-foreground dark:border-input dark:hover:bg-input/50 px-4 py-2 has-[&gt;svg]:px-3 relative h-8 w-full justify-start rounded-lg pl-3 font-normal text-foreground shadow-none hover:bg-muted/50 sm:pr-12 md:w-48 lg:w-56 xl:w-64 dark:bg-card" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-_r_1_" data-state="closed">
+        <span class="hidden lg:inline-flex">Search documentation...</span>
+        <span class="inline-flex lg:hidden">Search...</span>
+    </button>
+</div>
+<dialog id="search-dialog" onclick="onSearchDialogClick(event)"
+    class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background rounded-lg shadow-lg border overflow-hidden p-0">
+    <div class="w-lg gap-4">
+        <div class="flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground">
+            <div data-slot="command-input-wrapper" class="flex h-9 items-center gap-2 border-b px-3"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-search size-4 shrink-0 opacity-50">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                </svg>
+                <input data-slot="command-input"
+                    class="placeholder:text-muted-foreground flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50"
+                    placeholder="Search documentation..." cmdk-input="" autocomplete="off" autocorrect="off"
+                    spellcheck="false" aria-autocomplete="list" role="combobox" aria-expanded="true"
+                    aria-controls="radix-«r1t6»" aria-labelledby="radix-«r1t7»" id="radix-«r1t8»" type="text" value=""
+                    aria-activedescendant="radix-«r1th»" oninput="onInputHandler(event)">
+            </div>
+        </div>
+        <div id="mkdocs-search-results">
+            <!-- search results go there -->
+        </div>
+    </div>
+</dialog>
+<script>
+    document.removeEventListener("keydown", searchShortcutHandler);
+    document.addEventListener("keydown", searchShortcutHandler);
+</script>
+                </div>
+                
+                <div data-orientation="vertical" role="none" data-slot="separator"
+                    class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px ml-2 hidden lg:block">
+                </div>
+                <a target="_blank" rel="noreferrer" data-slot="button"
+                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 h-8 shadow-none"
+                    href="https://github.com/Seminarkurs-Lernapp-Mathematik/slam-app">
+                    <svg viewBox="0 0 438.549 438.549">
+                        <path fill="currentColor"
+                            d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z">
+                        </path>
+                    </svg>
+                    
+                    <span id="stargazers" class="text-muted-foreground w-8 text-xs tabular-nums" onload="test()">
+                    </span>
+                    
+                </a>
+                
+                <div data-orientation="vertical" role="none" data-slot="separator"
+                    class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px 3xl:flex hidden">
+                </div>
+                <button data-slot="button"
+                    class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-8 3xl:flex hidden"
+                    title="Toggle layout" onclick="toggleLayout(event)">
+                    <span class="sr-only">Toggle layout</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-gallery-horizontal">
+                        <path d="M2 3v18"></path>
+                        <rect width="12" height="18" x="6" y="3" rx="2"></rect>
+                        <path d="M22 3v18"></path>
+                    </svg>
+                </button>
+                <div data-orientation="vertical" role="none" data-slot="separator"
+                    class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px">
+                </div>
+                <button data-slot="button"
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 group/toggle extend-touch-target size-8"
+                    title="Toggle theme" onclick="onThemeSwitch(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="size-4.5">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                        <path d="M12 3l0 18"></path>
+                        <path d="M12 9l4.65 -4.65"></path>
+                        <path d="M12 14.3l7.37 -7.37"></path>
+                        <path d="M12 19.6l8.85 -8.85"></path>
+                    </svg>
+                    <span class="sr-only">Toggle theme</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="flex flex-1 flex-col">
+<div class="container-wrapper flex flex-1 flex-col px-2">
+<div class="group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex w-full 3xl:fixed:container 3xl:fixed:px-3 min-h-min flex-1 items-start px-0 [--sidebar-width:220px] [--top-spacing:0] lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] lg:[--sidebar-width:240px] lg:[--top-spacing:calc(var(--spacing)*4)]" data-slot="sidebar-wrapper" style="--sidebar-width:calc(var(--spacing) * 72);--sidebar-width-icon:3rem;">
+<div class="w-(--sidebar-width) flex-col text-sidebar-foreground sticky top-[calc(var(--header-height)+0.6rem)] z-30 hidden h-[calc(100svh-10rem)] overscroll-none bg-transparent [--sidebar-menu-width:--spacing(56)] lg:flex" data-slot="sidebar">
+<div class="h-9"></div>
+<div class="absolute top-8 z-10 h-8 w-(--sidebar-menu-width) shrink-0 bg-gradient-to-b from-background via-background/80 to-background/50 blur-xs">
+</div>
+<div class="absolute top-12 right-2 bottom-0 hidden h-full w-px bg-gradient-to-b from-transparent via-border to-transparent lg:flex">
+</div>
+<div class="flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden mx-auto no-scrollbar w-(--sidebar-menu-width) overflow-x-hidden px-2" data-sidebar="content" data-slot="sidebar-content" view-transition-name="sidebar">
+                            
+
+
+
+
+
+
+
+
+
+
+
+<div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2 pt-6">
+    <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
+        <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href=".."
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Übersicht
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="true" data-sidebar="menu-button"
+        data-size="default" href="./"
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Flutter App
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../backend/"
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Backend
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../teacher/"
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Lehrerplattform
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../architecture/"
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Architektur
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../security/"
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Sicherheit
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+<div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2">
+    <div data-slot="sidebar-group-label" data-sidebar="group-label"
+        class="flex h-8 shrink-0 items-center rounded-md px-2 text-xs ring-sidebar-ring outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 font-medium text-muted-foreground">
+        Los geht's</div>
+    <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
+        <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../getting-started/"
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Index
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../getting-started/installation/"
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Installation
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="sticky -bottom-1 z-10 h-16 shrink-0 bg-gradient-to-t from-background via-background/80 to-background/50 blur-xs">
+</div>
+                        </div>
+</div>
+<div class="h-full w-full">
+<div class="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full" data-slot="docs">
+<div class="flex min-w-0 flex-1 flex-col">
+<div class="h-(--top-spacing) shrink-0"></div>
+                                <article class="w-full" view-transition-name="page">
+  <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-2">
+      <div id="page-header" class="flex items-start justify-between">
+        <h1 class="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl">
+          Flutter App
+        </h1>
+
+        <div class="flex items-center gap-2 pt-1.5">
+          <button
+    onclick="fetch(`https://docs.learn-smart.app/app.md`).then((r) => r.blob()).then((blob) => navigator.clipboard.write([new ClipboardItem({ 'text/plain': blob })]))"
+    data-slot="button" class="secondary cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-copy ">
+        <path
+            d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z">
+        </path>
+        <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"></path>
+    </svg>
+    <span class="max-md:hidden">Copy Page</span>
+</button>
+          
+          <a data-slot="button" id="previous-button"
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 extend-touch-target size-8 shadow-none md:size-7"
+            href="../getting-started/installation/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="tabler-icon tabler-icon-arrow-left">
+              <path d="M5 12l14 0"></path>
+              <path d="M5 12l6 6"></path>
+              <path d="M5 12l6 -6"></path>
+            </svg>
+            <span class="sr-only">Previous</span>
+          </a>
+          
+          
+          <a data-slot="button" id="next-button"
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 extend-touch-target size-8 shadow-none md:size-7"
+            href="../backend/">
+            <span class="sr-only">Next</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="tabler-icon tabler-icon-arrow-right">
+              <path d="M5 12l14 0"></path>
+              <path d="M13 18l6 -6"></path>
+              <path d="M13 6l6 6"></path>
+            </svg>
+          </a>
+          
+        </div>
+      </div>
+      
+    </div>
+    <div class="flex justify-end items-center">
+      
+      
+    </div>
+  </div>
+  <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
+    <h2 id="uberblick">Überblick</h2>
+<p>Die SLaM-App ist eine plattformübergreifende Mobile- und Web-Anwendung, die mit <strong>Flutter 3.27+</strong> entwickelt wurde. Sie bietet Schülern ein adaptives, gamifiziertes Lernerlebnis mit KI-gestützten Fragen, Echtzeit-Feedback und personalisierten Lernplänen.</p>
+<h2 id="technologie-stack">Technologie-Stack</h2>
+<ul>
+<li><strong>Framework</strong>: Flutter 3.27+ / Dart 3.6+</li>
+<li><strong>State Management</strong>: Riverpod 2.6+ mit Code-Generierung</li>
+<li><strong>Design System</strong>: Material 3</li>
+<li><strong>Schriftart</strong>: Google Sans Flex</li>
+<li><strong>Backend-Kommunikation</strong>: Dio (HTTP Client)</li>
+<li><strong>Lokale Persistenz</strong>: Hive + SharedPreferences</li>
+<li><strong>Cloud-Persistenz</strong>: Cloud Firestore</li>
+<li><strong>Authentifizierung</strong>: Firebase Auth</li>
+<li><strong>Code-Generierung</strong>: build_runner, freezed, json_serializable</li>
+</ul>
+<h2 id="architektur">Architektur</h2>
+<h3 id="clean-architecture">Clean Architecture</h3>
+<p>Die App folgt einer strikten <strong>Clean Architecture</strong> mit drei Schichten:</p>
+<pre><code>┌─────────────────────────────────────┐
+│   Presentation Layer (UI + State)  │
+│   - Screens, Widgets, Providers    │
+└─────────────────┬───────────────────┘
+                  │
+┌─────────────────▼───────────────────┐
+│      Domain Layer (Business Logic)  │
+│      - Models, Entities             │
+└─────────────────┬───────────────────┘
+                  │
+┌─────────────────▼───────────────────┐
+│   Data Layer (Repositories, APIs)   │
+│   - Services, Datasources           │
+└─────────────────────────────────────┘
+</code></pre>
+<h3 id="ordnerstruktur">Ordnerstruktur</h3>
+<pre><code>lib/
+├── main.dart                    # Entry Point
+├── firebase_options.dart        # Auto-generiert
+├── app/
+│   ├── app.dart                 # SLAMApp (MaterialApp.router)
+│   ├── routes.dart              # GoRouter + Auth Redirect
+│   └── theme.dart               # Material 3 Themes
+├── core/
+│   ├── app_initializer.dart     # Firebase, Hive, Services Init
+│   ├── constants/               # API Endpoints, Firebase Collections
+│   ├── data/
+│   │   ├── datasources/         # local_datasource, remote_datasource
+│   │   ├── models/result.dart   # Result&lt;T,E&gt; Functional Error Type
+│   │   └── repositories/        # base, lernplan, settings
+│   ├── models/                  # Freezed Domain Models
+│   │   ├── question.dart
+│   │   ├── user_stats.dart
+│   │   ├── lernplan.dart
+│   │   └── saved_content.dart
+│   ├── services/
+│   │   ├── ai_service.dart      # Backend API Wrapper
+│   │   ├── auth_service.dart    # Firebase Auth
+│   │   └── firestore_service.dart # Firestore CRUD
+│   └── utils/
+│       ├── logger.dart          # Structured Logging
+│       ├── error_handler.dart   # Global Error Handler
+│       └── security_utils.dart  # Input Sanitization
+├── features/
+│   ├── auth/                    # Login, Register, Domain Restriction
+│   ├── home/                    # Main Navigation (4 Tabs)
+│   ├── live_feed/               # Adaptive Question Feed (Tab 1)
+│   ├── learning_plan/           # Topic Picker + AI Camera detection (Tab 2)
+│   ├── apps/                    # Apps Hub, GeoGebra, KI-Labor, Library (Tab 3)
+│   ├── gamification/            # XP, Coins, Streaks, Shop (Tab 4)
+│   ├── question_session/        # Step-by-Step Question Answering
+│   └── settings/                # Theme, Education Level, Debug Panel
+└── shared/widgets/              # Reusable Widgets
+</code></pre>
+<h3 id="feature-first-organisation">Feature-First Organisation</h3>
+<p>Jedes Feature ist ein isoliertes Modul mit eigener Ordnerstruktur:</p>
+<pre><code>features/live_feed/
+├── data/
+│   ├── models/              # Feature-spezifische Models
+│   └── repositories/        # Feature-spezifische Repositories
+├── domain/
+│   └── entities/            # Business Entities
+└── presentation/
+    ├── providers/           # Riverpod Providers
+    ├── screens/             # Full-Screen Views
+    └── widgets/             # Feature-spezifische Widgets
+</code></pre>
+<h2 id="state-management-riverpod-26">State Management: Riverpod 2.6+</h2>
+<h3 id="warum-riverpod">Warum Riverpod?</h3>
+<ul>
+<li><strong>Compile-Time Safety</strong>: Fehler werden zur Compile-Zeit erkannt</li>
+<li><strong>Testbarkeit</strong>: Provider sind einfach zu mocken</li>
+<li><strong>Performance</strong>: Automatische Optimierung durch Dependency Tracking</li>
+<li><strong>Code-Generierung</strong>: Weniger Boilerplate durch <code>@riverpod</code></li>
+</ul>
+<h3 id="provider-typen">Provider-Typen</h3>
+<p><strong>Service Provider</strong> (Singleton):</p>
+<pre><code class="language-dart">@riverpod
+AIService aiService(Ref ref) {
+  final dio = Dio(BaseOptions(baseUrl: ApiEndpoints.baseUrl));
+  return AIService(dio);
+}
+</code></pre>
+<p><strong>Stream Provider</strong> (Reactive):</p>
+<pre><code class="language-dart">@riverpod
+Stream&lt;User?&gt; authStateChanges(Ref ref) {
+  final authService = ref.watch(authServiceProvider);
+  return authService.authStateChanges;
+}
+</code></pre>
+<p><strong>Notifier Provider</strong> (Mutable State):</p>
+<pre><code class="language-dart">@riverpod
+class LiveFeedQueue extends _$LiveFeedQueue {
+  @override
+  List&lt;Question&gt; build() =&gt; [];
+
+  void addQuestions(List&lt;Question&gt; questions) {
+    state = [...state, ...questions];
+  }
+
+  Question? getNext() {
+    if (state.isEmpty) return null;
+    final question = state.first;
+    state = state.sublist(1);
+    return question;
+  }
+}
+</code></pre>
+<h3 id="dependency-injection">Dependency Injection</h3>
+<p>Riverpod fungiert als DI-Container:</p>
+<pre><code class="language-dart">// Service wird automatisch injiziert
+final aiService = ref.watch(aiServiceProvider);
+
+// Abhängigkeiten werden automatisch aufgelöst
+@riverpod
+Future&lt;QuestionSession&gt; generateQuestions(Ref ref, ...) async {
+  final aiService = ref.watch(aiServiceProvider);
+  final user = ref.watch(currentUserProvider);
+
+  return aiService.generateQuestions(userId: user!.uid, ...);
+}
+</code></pre>
+<h3 id="zero-warning-policy">Zero-Warning Policy</h3>
+<p><strong>Problem</strong>: Riverpod 2.x → 3.0 Migration führte zu 31 Deprecation Warnings.</p>
+<p><strong>Lösung</strong>: Alle <code>XxxRef</code> Typen durch generisches <code>Ref</code> ersetzt.</p>
+<p><strong>Vorher</strong>:</p>
+<pre><code class="language-dart">@riverpod
+AIService aiService(AiServiceRef ref) { ... }
+</code></pre>
+<p><strong>Nachher</strong>:</p>
+<pre><code class="language-dart">@riverpod
+AIService aiService(Ref ref) { ... }
+</code></pre>
+<p><strong>Ergebnis</strong>: 0 Deprecation Warnings, 100% moderne API-Nutzung.</p>
+<h2 id="kern-algorithmen-und-features">Kern-Algorithmen und Features</h2>
+<h3 id="cold-start-diagnose-quiz">Cold-Start Diagnose-Quiz</h3>
+<p>Um neuen Schülern vom ersten Moment an eine passgenaue Lernkurve zu bieten, durchlaufen diese im Onboarding-Prozess ein <strong>Diagnose-Quiz</strong>.
+- <strong>Ziel</strong>: Initiale Feststellung des Anforderungsbereichs (AFB I - Reproduktion, AFB II - Reorganisation, AFB III - Transferleistung).
+- <strong>Ablauf</strong>: Das Quiz präsentiert adaptiv Mathematikaufgaben (aus <code>initialKnowledge</code>). Basierend auf der Präzision und Lösungsgeschwindigkeit wird der initiale Schwierigkeitsgrad und der Einstiegs-AFB für zukünftige, KI-generierte Fragenpakete (<code>generateQuestions</code>) festgelegt.
+- <strong>Speicherung</strong>: Die Resultate werden in der Subcollection <code>/users/{userId}/initialKnowledge/</code> gesichert.</p>
+<h3 id="adaptiver-auto-modus-spaced-repetition-sm-2">Adaptiver Auto-Modus &amp; Spaced Repetition (SM-2)</h3>
+<p>SLaM nutzt wissenschaftlich fundierte Lernmethoden zur Optimierung der Gedächtnisleistung:</p>
+<ol>
+<li><strong>Auto Mode (<code>updateAutoMode</code>)</strong>:
+   Das Backend analysiert zyklisch die jüngsten Leistungsmetriken (Genauigkeit, benötigte Hinweise, Lösungsdauer). Eine Hintergrund-KI (<code>gemini-3.2-flash</code>) passt basierend darauf den Schwierigkeitsgrad, die Komplexität und den Detailgrad zukünftiger Fragen automatisch an.</li>
+<li><strong>Spaced Repetition (<code>manageMemories</code>)</strong>:
+   Die App implementiert den <strong>SuperMemo-2 (SM-2)</strong> Algorithmus zur Optimierung von Wiederholungsintervallen.</li>
+<li><strong>Rating <code>q</code></strong>: Nach jeder Aufgabe gibt der Nutzer ein qualitatives Feedback von 0 (komplett vergessen) bis 5 (perfekt erinnert).</li>
+<li><strong>Ease Factor (EF)</strong>: Der EF wird nach jeder Beantwortung angepasst:
+     <code>EF' = EF + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02))</code><ul>
+<li>Der minimale EF beträgt 1.3.</li>
+<li>Der initiale EF ist 2.5.</li>
+</ul>
+</li>
+<li><strong>Intervall-Berechnung <code>I(n)</code></strong>:<ul>
+<li><code>I(1) = 1</code> (Tag)</li>
+<li><code>I(2) = 6</code> (Tage)</li>
+<li><code>I(n) = I(n-1) * EF</code> für n &gt; 2.</li>
+</ul>
+</li>
+<li><strong>Synchronisation</strong>: Über den Endpoint <code>/api/manage-memories</code> (Action <code>update</code>) werden diese Werte im Backend persistiert und via <code>get-due</code> fällige Aufgaben für den aktuellen Tag abgerufen.</li>
+</ol>
+<h2 id="datenfluss">Datenfluss</h2>
+<h3 id="unidirectional-data-flow">Unidirectional Data Flow</h3>
+<pre><code class="language-mermaid">graph LR
+    A[User Action] --&gt; B[Provider Method]
+    B --&gt; C[Service Call]
+    C --&gt; D[Backend API]
+    D --&gt; E[Response]
+    E --&gt; F[State Update]
+    F --&gt; G[UI Rebuild]
+</code></pre>
+<p><strong>Beispiel: Frage beantworten</strong></p>
+<pre><code class="language-dart">// 1. User Action (UI)
+ElevatedButton(
+  onPressed: () =&gt; ref.read(questionSessionProvider.notifier).submitAnswer(answer),
+  child: Text('Antworten'),
+)
+
+// 2. Provider Method
+@riverpod
+class QuestionSession extends _$QuestionSession {
+  Future&lt;void&gt; submitAnswer(String answer) async {
+    state = state.copyWith(isLoading: true);
+
+    // 3. Service Call
+    final result = await ref.read(aiServiceProvider).evaluateAnswer(...);
+
+    // 4. State Update
+    state = state.copyWith(
+      isLoading: false,
+      currentResult: result,
+    );
+  }
+}
+
+// 5. UI Rebuild (automatisch durch Riverpod)
+</code></pre>
+<h3 id="http-202-background-job-polling">HTTP 202 Background Job Polling</h3>
+<p>Für langlaufende KI-Aufgaben wie die Generierung von Mini-Apps oder GeoGebra Applets (KI-Labor) wird ein asynchrones HTTP-Polling implementiert, um die Flutter UI reaktiv zu halten:</p>
+<ol>
+<li><strong>Trigger</strong>: <code>generateMiniAppAsync</code> sendet einen POST Request und erhält sofort einen <code>202 Accepted</code> Status samt <code>jobId</code>.</li>
+<li><strong>Polling-Loop</strong>: Die Funktion <code>generateMiniAppWithPolling</code> ruft periodisch (z.B. alle 3 Sekunden) den Endpunkt <code>GET /api/jobs/{jobId}</code> ab.</li>
+<li><strong>UI-Update</strong>: Über einen Callback (<code>onStatusUpdate</code>) wird die Benutzeroberfläche über den aktuellen Status (<code>pending</code>, <code>done</code>, <code>error</code>) informiert.</li>
+<li><strong>Completion</strong>: Sobald der Job-Status auf <code>done</code> wechselt, wird das Ergebnis (JSON) zurückgegeben und das UI abschließend aktualisiert.</li>
+</ol>
+<h2 id="offline-first-caching">Offline-First Caching</h2>
+<h3 id="4-layer-architektur">4-Layer-Architektur</h3>
+<pre><code>┌─────────────────────────────────────┐
+│  L1: In-Memory (Riverpod State)    │  ← Schnellster Zugriff
+├─────────────────────────────────────┤
+│  L2: SharedPreferences              │  ← Lokale Queue-Fallback
+├─────────────────────────────────────┤
+│  L3: Hive Boxes                     │  ← User Profile, Settings
+├─────────────────────────────────────┤
+│  L4: Cloud Firestore                │  ← Primary Cache, Sync
+└─────────────────────────────────────┘
+</code></pre>
+<p><strong>Implementierung</strong>:</p>
+<pre><code class="language-dart">class LiveFeedQueue {
+  // L1: In-Memory
+  List&lt;Question&gt; _questions = [];
+
+  Future&lt;void&gt; loadQuestions() async {
+    // L4: Firestore Cache
+    final cached = await _firestoreService.getQuestionCache(userId);
+    if (cached != null &amp;&amp; !cached.isExpired) {
+      _questions = cached.questions;
+      return;
+    }
+
+    // L2: SharedPreferences Fallback
+    final local = await _prefs.getString('question_queue');
+    if (local != null) {
+      _questions = jsonDecode(local);
+      return;
+    }
+
+    // Keine Cache-Treffer → Backend-Call
+    await _fetchFromBackend();
+  }
+
+  Future&lt;void&gt; saveToCache() async {
+    // L2: SharedPreferences
+    await _prefs.setString('question_queue', jsonEncode(_questions));
+
+    // L4: Firestore
+    await _firestoreService.saveQuestionCache(userId, _questions);
+  }
+}
+</code></pre>
+<p><strong>Vorteile</strong>:
+- <strong>Instant Load</strong>: App startet mit gecachten Fragen
+- <strong>Offline-Fähig</strong>: Fragen können offline beantwortet werden
+- <strong>Sync</strong>: Automatische Synchronisation bei Netzwerk-Verfügbarkeit</p>
+<h2 id="error-handling">Error Handling</h2>
+<h3 id="elegante-fehlerbehandlung">Elegante Fehlerbehandlung</h3>
+<p><strong>Problem</strong>: Verschachtelte if-else-Blöcke in <code>_handleDioException()</code> führten zu hoher Komplexität.</p>
+<p><strong>Lösung</strong>: Flache Struktur mit Early Returns und dediziertem Error-Extractor.</p>
+<p><strong>Implementierung</strong> (<code>ai_service.dart</code>):</p>
+<pre><code class="language-dart">AIException _handleDioException(DioException e) {
+  // Response errors (4xx, 5xx)
+  if (e.response != null) {
+    return AIException(
+      statusCode: e.response!.statusCode,
+      message: _extractErrorMessage(e.response!.data),
+    );
+  }
+
+  // Timeout errors
+  if (e.type == DioExceptionType.connectionTimeout || 
+      e.type == DioExceptionType.receiveTimeout) {
+    return AIException(
+      statusCode: 408,
+      message: e.type == DioExceptionType.connectionTimeout
+          ? 'Verbindungszeitüberschreitung. Bitte versuche es erneut.'
+          : 'Antwort-Zeitüberschreitung. Bitte versuche es erneut.',
+    );
+  }
+
+  // Network errors
+  return AIException(
+    statusCode: 0,
+    message: 'Netzwerkfehler: ${e.message}',
+  );
+}
+
+String _extractErrorMessage(dynamic data) {
+  if (data is! Map&lt;String, dynamic&gt;) return 'API Error';
+
+  final error = data['error'];
+  final message = data['message'];
+
+  if (error is String &amp;&amp; error.isNotEmpty) {
+    if (message is String &amp;&amp; message.isNotEmpty &amp;&amp; message != error) {
+      return '$error\n$message';
+    }
+    return error;
+  }
+
+  if (message is String &amp;&amp; message.isNotEmpty) {
+    return message;
+  }
+
+  return 'API Error';
+}
+</code></pre>
+<p><strong>Vorteile</strong>:
+- <strong>Lesbarkeit</strong>: Klare Struktur, keine Verschachtelung
+- <strong>Wartbarkeit</strong>: Einfach erweiterbar
+- <strong>Testbarkeit</strong>: Jeder Pfad ist isoliert testbar
+- <strong>Komplexität</strong>: Reduziert von 8 → 3 (Cyclomatic Complexity)</p>
+<h3 id="global-error-handler">Global Error Handler</h3>
+<pre><code class="language-dart">class ErrorHandler {
+  static void handleError(Object error, StackTrace stackTrace) {
+    Logger.error(
+      'Unhandled error',
+      tag: 'ErrorHandler',
+      error: error,
+      stackTrace: stackTrace,
+    );
+
+    // Sentry/Crashlytics Integration hier
+  }
+}
+
+// In main.dart
+void main() {
+  FlutterError.onError = (details) {
+    ErrorHandler.handleError(details.exception, details.stack!);
+  };
+
+  runApp(const SLAMApp());
+}
+</code></pre>
+<h2 id="structured-logging">Structured Logging</h2>
+<h3 id="production-safe-logger">Production-Safe Logger</h3>
+<p><strong>Implementierung</strong> (<code>core/utils/logger.dart</code>):</p>
+<pre><code class="language-dart">class Logger {
+  static LogLevel _minLevel = kDebugMode ? LogLevel.verbose : LogLevel.warning;
+
+  static void info(String message, {String? tag, Map&lt;String, dynamic&gt;? data}) {
+    _log(LogLevel.info, message, tag: tag, data: data);
+  }
+
+  static void error(
+    String message, {
+    String? tag,
+    Map&lt;String, dynamic&gt;? data,
+    Object? error,
+    StackTrace? stackTrace,
+  }) {
+    _log(LogLevel.error, message, tag: tag, data: data, error: error, stackTrace: stackTrace);
+  }
+
+  static void _log(LogLevel level, String message, {...}) {
+    if (level.index &lt; _minLevel.index) return;
+
+    final entry = LogEntry(
+      timestamp: DateTime.now(),
+      level: level,
+      message: message,
+      tag: tag ?? 'App',
+      data: data,
+      error: error?.toString(),
+      stackTrace: stackTrace?.toString(),
+    );
+
+    // Console output (nur in Debug)
+    if (kDebugMode) {
+      _printToConsole(entry);
+    }
+
+    // Development logging
+    if (kDebugMode) {
+      developer.log(
+        message,
+        name: entry.tag,
+        error: error,
+        stackTrace: stackTrace,
+        time: entry.timestamp,
+      );
+    }
+  }
+}
+</code></pre>
+<p><strong>Verwendung</strong>:</p>
+<pre><code class="language-dart">Logger.info('User logged in', tag: 'Auth', data: {'userId': uid});
+Logger.error('API call failed', tag: 'Network', error: e, stackTrace: st);
+</code></pre>
+<p><strong>Features</strong>:
+- <strong>Automatic Stripping</strong>: Logs werden in Release-Builds automatisch entfernt
+- <strong>Emoji-Prefixes</strong>: 📝 DEBUG, ℹ️ INFO, ⚠️ WARN, ❌ ERROR
+- <strong>In-Memory Buffer</strong>: Letzte 100 Log-Einträge für Debugging
+- <strong>Tag-basierte Filterung</strong>: Logs nach Feature filtern</p>
+<h2 id="immutable-models-mit-freezed">Immutable Models mit Freezed</h2>
+<h3 id="warum-freezed">Warum Freezed?</h3>
+<ul>
+<li><strong>Immutability</strong>: Keine unerwarteten State-Mutationen</li>
+<li><strong>copyWith</strong>: Einfache State-Updates</li>
+<li><strong>Equality</strong>: Automatische <code>==</code> und <code>hashCode</code> Implementierung</li>
+<li><strong>JSON Serialization</strong>: Integration mit json_serializable</li>
+</ul>
+<h3 id="beispiel">Beispiel</h3>
+<pre><code class="language-dart">@freezed
+class Question with _$Question {
+  const factory Question({
+    required String id,
+    required String type,
+    required int difficulty,
+    required String topic,
+    required String question,
+    required String solution,
+    required String explanation,
+    required String correctFeedback,
+    required String incorrectFeedback,
+    required List&lt;QuestionHint&gt; hints,
+    List&lt;QuestionOption&gt;? options,
+    StepByStepData? stepByStepData,
+  }) = _Question;
+
+  factory Question.fromJson(Map&lt;String, dynamic&gt; json) =&gt; _$QuestionFromJson(json);
+}
+</code></pre>
+<p><strong>Generierter Code</strong>:
+- <code>copyWith()</code> für immutable Updates
+- <code>==</code> und <code>hashCode</code> für Value Equality
+- <code>fromJson()</code> und <code>toJson()</code> für Serialization
+- Union Types für Polymorphismus</p>
+<p><strong>Verwendung</strong>:</p>
+<pre><code class="language-dart">final updatedQuestion = question.copyWith(difficulty: 7);
+</code></pre>
+<h2 id="performance-optimierungen">Performance-Optimierungen</h2>
+<h3 id="1-widget-optimierung">1. Widget-Optimierung</h3>
+<p><strong>const Constructors</strong>:</p>
+<pre><code class="language-dart">const GlassPanel(
+  child: Text('Hello'),
+)
+</code></pre>
+<p><strong>Vorteile</strong>: Widget wird nur einmal erstellt, nicht bei jedem Rebuild.</p>
+<p><strong>RepaintBoundary</strong>:</p>
+<pre><code class="language-dart">RepaintBoundary(
+  child: ExpensiveWidget(),
+)
+</code></pre>
+<p><strong>Vorteile</strong>: Verhindert unnötige Repaints von teuren Widgets.</p>
+<h3 id="2-lazy-loading">2. Lazy Loading</h3>
+<p><strong>ListView.builder</strong>:</p>
+<pre><code class="language-dart">ListView.builder(
+  itemCount: questions.length,
+  itemBuilder: (context, index) =&gt; QuestionCard(questions[index]),
+)
+</code></pre>
+<p><strong>Vorteile</strong>: Nur sichtbare Items werden gerendert.</p>
+<h3 id="3-image-caching">3. Image Caching</h3>
+<pre><code class="language-dart">CachedNetworkImage(
+  imageUrl: url,
+  placeholder: (context, url) =&gt; CircularProgressIndicator(),
+  errorWidget: (context, url, error) =&gt; Icon(Icons.error),
+)
+</code></pre>
+<h3 id="4-debouncing">4. Debouncing</h3>
+<pre><code class="language-dart">Timer? _debounce;
+
+void onSearchChanged(String query) {
+  _debounce?.cancel();
+  _debounce = Timer(const Duration(milliseconds: 500), () {
+    ref.read(searchQueryProvider.notifier).setQuery(query);
+  });
+}
+</code></pre>
+<h2 id="routing-mit-gorouter">Routing mit GoRouter</h2>
+<h3 id="deklarative-navigation">Deklarative Navigation</h3>
+<pre><code class="language-dart">final routerProvider = Provider&lt;GoRouter&gt;((ref) {
+  final authState = ref.watch(authStateChangesProvider);
+
+  return GoRouter(
+    initialLocation: '/splash',
+    redirect: (context, state) {
+      final isLoggedIn = authState.value != null;
+      final isOnAuthPage = state.matchedLocation.startsWith('/auth');
+
+      if (!isLoggedIn &amp;&amp; !isOnAuthPage) {
+        return '/auth/login';
+      }
+
+      if (isLoggedIn &amp;&amp; isOnAuthPage) {
+        return '/home';
+      }
+
+      return null;
+    },
+    routes: [
+      GoRoute(
+        path: '/splash',
+        name: 'splash',
+        builder: (context, state) =&gt; const SplashScreen(),
+      ),
+      GoRoute(
+        path: '/home',
+        name: 'home',
+        builder: (context, state) =&gt; const MainNavigation(),
+      ),
+      GoRoute(
+        path: '/question-session',
+        name: 'questionSession',
+        builder: (context, state) =&gt; const QuestionSessionScreen(),
+      ),
+    ],
+  );
+});
+</code></pre>
+<p><strong>Features</strong>:
+- <strong>Auth Redirect</strong>: Automatische Umleitung basierend auf Auth-Status
+- <strong>Deep Linking</strong>: Unterstützung für Deep Links
+- <strong>Type-Safe</strong>: Named Routes mit Type-Safe Parameters
+- <strong>Expressive Transitions</strong>: Custom Page Transitions (400ms Fade + Scale)</p>
+<h2 id="testing">Testing</h2>
+<h3 id="unit-tests">Unit Tests</h3>
+<p><strong>Provider Tests</strong>:</p>
+<pre><code class="language-dart">test('LiveFeedQueue adds questions', () {
+  final container = ProviderContainer();
+  final queue = container.read(liveFeedQueueProvider.notifier);
+
+  queue.addQuestions([question1, question2]);
+
+  expect(container.read(liveFeedQueueProvider), [question1, question2]);
+});
+</code></pre>
+<p><strong>Service Tests</strong>:</p>
+<pre><code class="language-dart">test('AIService handles 429 rate limit', () async {
+  final mockDio = MockDio();
+  when(() =&gt; mockDio.post(any(), data: any(named: 'data')))
+      .thenThrow(DioException(
+        response: Response(statusCode: 429),
+      ));
+
+  final service = AIService(mockDio);
+
+  expect(
+    () =&gt; service.generateQuestions(...),
+    throwsA(isA&lt;AIException&gt;().having((e) =&gt; e.statusCode, 'statusCode', 429)),
+  );
+});
+</code></pre>
+<h3 id="widget-tests">Widget Tests</h3>
+<pre><code class="language-dart">testWidgets('QuestionCard displays question text', (tester) async {
+  await tester.pumpWidget(
+    ProviderScope(
+      child: MaterialApp(
+        home: QuestionCard(question: testQuestion),
+      ),
+    ),
+  );
+
+  expect(find.text(testQuestion.question), findsOneWidget);
+});
+</code></pre>
+<h2 id="build-deployment">Build &amp; Deployment</h2>
+<h3 id="development">Development</h3>
+<pre><code class="language-bash">flutter pub get
+dart run build_runner build --delete-conflicting-outputs
+flutter run -d chrome  # Web
+flutter run            # Mobile
+</code></pre>
+<h3 id="production">Production</h3>
+<pre><code class="language-bash"># Web
+flutter build web --release
+
+# Android
+flutter build apk --release
+flutter build appbundle --release
+
+# iOS (requires macOS + Xcode)
+flutter build ios --release
+</code></pre>
+<h3 id="code-generierung">Code-Generierung</h3>
+<pre><code class="language-bash"># Riverpod + Freezed + JSON Serialization
+dart run build_runner build --delete-conflicting-outputs
+
+# Watch Mode (während Entwicklung)
+dart run build_runner watch --delete-conflicting-outputs
+</code></pre>
+<h2 id="sicherheit">Sicherheit</h2>
+<h3 id="input-sanitization">Input Sanitization</h3>
+<pre><code class="language-dart">class SecurityUtils {
+  static String sanitizeInput(String input) {
+    return input
+        .replaceAll(RegExp(r'&lt;script[^&gt;]*&gt;.*?&lt;/script&gt;', caseSensitive: false), '')
+        .replaceAll(RegExp(r'&lt;[^&gt;]*&gt;'), '')
+        .trim();
+  }
+}
+</code></pre>
+<h3 id="secure-storage">Secure Storage</h3>
+<pre><code class="language-dart">// Sensitive Daten (Tokens) in Secure Storage
+final storage = FlutterSecureStorage();
+await storage.write(key: 'auth_token', value: token);
+</code></pre>
+<h3 id="screenshot-blocking-android">Screenshot Blocking (Android)</h3>
+<pre><code class="language-kotlin">// MainActivity.kt
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    window.setFlags(
+        WindowManager.LayoutParams.FLAG_SECURE,
+        WindowManager.LayoutParams.FLAG_SECURE
+    )
+}
+</code></pre>
+<h2 id="accessibility">Accessibility</h2>
+<h3 id="semantics">Semantics</h3>
+<pre><code class="language-dart">Semantics(
+  label: 'Antwort einreichen',
+  button: true,
+  child: ElevatedButton(...),
+)
+</code></pre>
+<h3 id="screen-reader-support">Screen Reader Support</h3>
+<pre><code class="language-dart">Text(
+  'Frage 1 von 20',
+  semanticsLabel: 'Frage eins von zwanzig',
+)
+</code></pre>
+<h3 id="contrast-ratios">Contrast Ratios</h3>
+<p>Alle Farben erfüllen WCAG AA-Standard (4.5:1 für Text, 3:1 für UI-Elemente).</p>
+<h2 id="nachste-schritte">Nächste Schritte</h2>
+<ul>
+<li><a href="../backend/">Backend</a> – Cloudflare Workers API</li>
+<li><a href="../teacher/">Lehrerplattform</a> – React Dashboard</li>
+<li><a href="../architecture/">Architektur</a> – Systemdesign</li>
+</ul>
+  </div>
+  
+  <script>
+    document.querySelectorAll('article h2, article h3').forEach((header) => {
+      toc.observer.observe(header);
+    });
+  </script>
+</article>
+                                <div class="mx-auto flex flex-wrap h-16 w-full max-w-2xl items-center gap-2 px-4 md:px-0">
+    
+    <a data-slot="button"
+        class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 shadow-none"
+        href="../getting-started/installation/">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="tabler-icon tabler-icon-arrow-left ">
+            <path d="M5 12l14 0"></path>
+            <path d="M5 12l6 6"></path>
+            <path d="M5 12l6 -6"></path>
+        </svg>
+        <span class="max-[500px]:hidden">Installation</span>
+    </a>
+    
+    
+    <a data-slot="button"
+        class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 ml-auto shadow-none"
+        href="../backend/">
+        <span class="max-[500px]:hidden">Backend</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="tabler-icon tabler-icon-arrow-right ">
+            <path d="M5 12l14 0"></path>
+            <path d="M13 18l6 -6"></path>
+            <path d="M13 6l6 6"></path>
+        </svg>
+    </a>
+    
+</div>
+                                <dialog id="bottom-sidebar" onclick="onBottomSidebarDialogClick(event)" class="bg-transparent"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(0px, 58px); min-width: max-content; --radix-popper-transform-origin: 0% 0px; will-change: transform; z-index: 50; --radix-popper-available-width: 504px; --radix-popper-available-height: 857px; --radix-popper-anchor-width: 72.94999694824219px; --radix-popper-anchor-height: 32px;">
+    <div data-side="bottom" data-align="start" data-state="open" role="dialog" data-slot="popover-content"
+        class="text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 origin-(--radix-popover-content-transform-origin) border outline-hidden bg-background/90 no-scrollbar h-(--radix-popper-available-height) w-(--radix-popper-available-width) overflow-y-auto rounded-none border-none p-0 shadow-none backdrop-blur duration-100"
+        style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin); --radix-popover-content-available-width: var(--radix-popper-available-width); --radix-popover-content-available-height: var(--radix-popper-available-height); --radix-popover-trigger-width: var(--radix-popper-anchor-width); --radix-popover-trigger-height: var(--radix-popper-anchor-height);"
+        tabindex="-1">
+        <div class="flex flex-col gap-12 overflow-auto px-6 py-6">
+            
+            
+            
+
+            
+            <div class="flex flex-col gap-4">
+                <div class="text-muted-foreground text-sm font-medium">Menu</div>
+                <div class="flex flex-col gap-3">
+                    
+                    <a class="text-2xl font-medium" href="..">
+                        
+                        Übersicht
+                        
+                    </a>
+                    
+                    <a class="text-2xl font-medium" href="./">
+                        
+                        Flutter App
+                        
+                    </a>
+                    
+                    <a class="text-2xl font-medium" href="../backend/">
+                        
+                        Backend
+                        
+                    </a>
+                    
+                    <a class="text-2xl font-medium" href="../teacher/">
+                        
+                        Lehrerplattform
+                        
+                    </a>
+                    
+                    <a class="text-2xl font-medium" href="../architecture/">
+                        
+                        Architektur
+                        
+                    </a>
+                    
+                    <a class="text-2xl font-medium" href="../security/">
+                        
+                        Sicherheit
+                        
+                    </a>
+                    
+                </div>
+            </div>
+            
+
+            
+            <div class="flex flex-col gap-8">
+                
+                <div class="flex flex-col gap-4">
+                    <div class="text-muted-foreground text-sm font-medium">Los geht's</div>
+                    
+                    <div class="flex flex-col gap-3">
+                        
+                        <a class="text-2xl font-medium" href="../getting-started/">
+                            
+                            Index
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../getting-started/installation/">
+                            
+                            Installation
+                            
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            
+
+        </div>
+    </div>
+</dialog>
+                            </div>
+<div class="sticky top-[calc(var(--header-height)+1px)] ml-auto hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] w-72 flex-col gap-4 overflow-hidden overscroll-none pb-8 xl:flex">
+<div class="h-(--top-spacing) shrink-0"></div>
+                                <div id="toc" view-transition-name="toc" class="no-scrollbar overflow-y-auto px-8">
+    <div class="flex flex-col gap-2 p-4 pt-0 text-sm">
+        <p class="text-muted-foreground bg-background sticky top-0 h-6 text-xs">On This Page</p>
+        
+        
+        
+        
+        <a href="#uberblick"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#uberblick');">
+            Überblick
+        </a>
+        
+
+        
+        <a href="#technologie-stack"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#technologie-stack');">
+            Technologie-Stack
+        </a>
+        
+
+        
+        <a href="#architektur"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#architektur');">
+            Architektur
+        </a>
+        
+        
+        <a href="#clean-architecture"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#clean-architecture');">
+            Clean Architecture
+        </a>
+        
+        <a href="#ordnerstruktur"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#ordnerstruktur');">
+            Ordnerstruktur
+        </a>
+        
+        <a href="#feature-first-organisation"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#feature-first-organisation');">
+            Feature-First Organisation
+        </a>
+        
+        
+
+        
+        <a href="#state-management-riverpod-26"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#state-management-riverpod-26');">
+            State Management: Riverpod 2.6+
+        </a>
+        
+        
+        <a href="#warum-riverpod"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#warum-riverpod');">
+            Warum Riverpod?
+        </a>
+        
+        <a href="#provider-typen"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#provider-typen');">
+            Provider-Typen
+        </a>
+        
+        <a href="#dependency-injection"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#dependency-injection');">
+            Dependency Injection
+        </a>
+        
+        <a href="#zero-warning-policy"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#zero-warning-policy');">
+            Zero-Warning Policy
+        </a>
+        
+        
+
+        
+        <a href="#kern-algorithmen-und-features"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#kern-algorithmen-und-features');">
+            Kern-Algorithmen und Features
+        </a>
+        
+        
+        <a href="#cold-start-diagnose-quiz"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#cold-start-diagnose-quiz');">
+            Cold-Start Diagnose-Quiz
+        </a>
+        
+        <a href="#adaptiver-auto-modus-spaced-repetition-sm-2"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#adaptiver-auto-modus-spaced-repetition-sm-2');">
+            Adaptiver Auto-Modus &amp; Spaced Repetition (SM-2)
+        </a>
+        
+        
+
+        
+        <a href="#datenfluss"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#datenfluss');">
+            Datenfluss
+        </a>
+        
+        
+        <a href="#unidirectional-data-flow"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#unidirectional-data-flow');">
+            Unidirectional Data Flow
+        </a>
+        
+        <a href="#http-202-background-job-polling"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#http-202-background-job-polling');">
+            HTTP 202 Background Job Polling
+        </a>
+        
+        
+
+        
+        <a href="#offline-first-caching"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#offline-first-caching');">
+            Offline-First Caching
+        </a>
+        
+        
+        <a href="#4-layer-architektur"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#4-layer-architektur');">
+            4-Layer-Architektur
+        </a>
+        
+        
+
+        
+        <a href="#error-handling"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#error-handling');">
+            Error Handling
+        </a>
+        
+        
+        <a href="#elegante-fehlerbehandlung"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#elegante-fehlerbehandlung');">
+            Elegante Fehlerbehandlung
+        </a>
+        
+        <a href="#global-error-handler"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#global-error-handler');">
+            Global Error Handler
+        </a>
+        
+        
+
+        
+        <a href="#structured-logging"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#structured-logging');">
+            Structured Logging
+        </a>
+        
+        
+        <a href="#production-safe-logger"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#production-safe-logger');">
+            Production-Safe Logger
+        </a>
+        
+        
+
+        
+        <a href="#immutable-models-mit-freezed"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#immutable-models-mit-freezed');">
+            Immutable Models mit Freezed
+        </a>
+        
+        
+        <a href="#warum-freezed"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#warum-freezed');">
+            Warum Freezed?
+        </a>
+        
+        <a href="#beispiel"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#beispiel');">
+            Beispiel
+        </a>
+        
+        
+
+        
+        <a href="#performance-optimierungen"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#performance-optimierungen');">
+            Performance-Optimierungen
+        </a>
+        
+        
+        <a href="#1-widget-optimierung"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#1-widget-optimierung');">
+            1. Widget-Optimierung
+        </a>
+        
+        <a href="#2-lazy-loading"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#2-lazy-loading');">
+            2. Lazy Loading
+        </a>
+        
+        <a href="#3-image-caching"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#3-image-caching');">
+            3. Image Caching
+        </a>
+        
+        <a href="#4-debouncing"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#4-debouncing');">
+            4. Debouncing
+        </a>
+        
+        
+
+        
+        <a href="#routing-mit-gorouter"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#routing-mit-gorouter');">
+            Routing mit GoRouter
+        </a>
+        
+        
+        <a href="#deklarative-navigation"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#deklarative-navigation');">
+            Deklarative Navigation
+        </a>
+        
+        
+
+        
+        <a href="#testing"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#testing');">
+            Testing
+        </a>
+        
+        
+        <a href="#unit-tests"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#unit-tests');">
+            Unit Tests
+        </a>
+        
+        <a href="#widget-tests"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#widget-tests');">
+            Widget Tests
+        </a>
+        
+        
+
+        
+        <a href="#build-deployment"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#build-deployment');">
+            Build &amp; Deployment
+        </a>
+        
+        
+        <a href="#development"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#development');">
+            Development
+        </a>
+        
+        <a href="#production"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#production');">
+            Production
+        </a>
+        
+        <a href="#code-generierung"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#code-generierung');">
+            Code-Generierung
+        </a>
+        
+        
+
+        
+        <a href="#sicherheit"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#sicherheit');">
+            Sicherheit
+        </a>
+        
+        
+        <a href="#input-sanitization"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#input-sanitization');">
+            Input Sanitization
+        </a>
+        
+        <a href="#secure-storage"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#secure-storage');">
+            Secure Storage
+        </a>
+        
+        <a href="#screenshot-blocking-android"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#screenshot-blocking-android');">
+            Screenshot Blocking (Android)
+        </a>
+        
+        
+
+        
+        <a href="#accessibility"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#accessibility');">
+            Accessibility
+        </a>
+        
+        
+        <a href="#semantics"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#semantics');">
+            Semantics
+        </a>
+        
+        <a href="#screen-reader-support"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#screen-reader-support');">
+            Screen Reader Support
+        </a>
+        
+        <a href="#contrast-ratios"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#contrast-ratios');">
+            Contrast Ratios
+        </a>
+        
+        
+
+        
+        <a href="#nachste-schritte"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#nachste-schritte');">
+            Nächste Schritte
+        </a>
+        
+
+        
+        
+        
+        
+
+    </div>
+    <div class="h-12"></div>
+
+</div>
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</main>
+        <footer view-transition-name="footer"
+    class="group-has-[.section-soft]/body:bg-surface/40 3xl:fixed:bg-transparent dark:bg-transparent">
+    <div class="container-wrapper px-4 xl:px-6">
+        <div class="flex h-(--footer-height) items-center justify-between">
+            <div class="text-muted-foreground w-full text-center text-xs leading-loose sm:text-sm">
+                
+                <a href="https://github.com/asiffer/mkdocs-shadcn">shadcn theme</a> provided by
+                <a href="https://github.com/asiffer">@asiffer</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+     
+
+<script src="../search/main.js"></script>
+
+
+    
+
+    <script integrity="sha384-JLNLRFGzvOp0up707XKgSnAjjt1w5BF/+lbeLQvlf6mNwf0m89IXFdpNAk4t6Hcs" src="../js/copy-button.js"></script>
+<script integrity="sha384-JBx6cBEiyhK1KPwZgBHiI6GDaAmvlOxMQFyWAZTEpW5Ifo5XQ2LBcJ61GVOumwF1" src="../js/sidebar.js"></script>
+<script integrity="sha384-fNURFMRt0p/HqXnQnV4+CT9dX1GiU5F0fC3pFbg7gfoANytoUMErSW7suWSBkSuF" src="../js/slider.js"></script>
+<script>updatePygmentsStylesheet();</script>
+    
+    <script>fetchStargazers("https://github.com/Seminarkurs-Lernapp-Mathematik/slam-app");</script>
+    
+    
+    
+    <script type="speculationrules">
+{
+  "prerender": [
+    {
+      "where": {
+          "selector_matches": ["#next-button", "#previous-button"]
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>

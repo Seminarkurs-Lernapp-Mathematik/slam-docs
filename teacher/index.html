@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<script>
+        const base_url = "https://docs.learn-smart.app/"; /* for search plugin notably */
+    </script>
+    <script integrity="sha384-m6cZ+Whl1ci89lidlu8DH4C+sZLNOYBvImtjUIhUK+iaNffXhqtbYgBVuuPfRsa0" src="../js/dark.js"></script>
+
+
+    <meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+    
+
+
+<title>Lehrerplattform</title>
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://docs.learn-smart.app/teacher/">
+
+
+<!-- Open Graph (Facebook, LinkedIn) -->
+
+<meta property="og:title" content="Lehrerplattform">
+
+
+
+
+
+<meta property="og:url" content="https://docs.learn-smart.app/teacher/">
+
+
+
+
+
+
+<!-- Twitter Card -->
+
+<meta name="twitter:title" content="Lehrerplattform">
+
+
+
+
+
+
+<!-- JSON-LD Structured Data -->
+
+
+
+    <link href="../img/favicon.ico" rel="icon"/>
+
+    <link href="../css/base.css" rel="stylesheet"/>
+<link href="../css/geist.css" rel="stylesheet"/>
+
+    
+
+    <style>
+        :root {
+            --theme-accent: oklch(62.3% 0.214 259.815);
+        }
+    </style>
+
+    
+
+    <script integrity="sha384-V2jkXRy811qODUbfkLlkVJYBbf4h6XHAEjcU6ReASBPrJvTrlYh4GrI4t6GCju6n" src="../js/callbacks.js"></script>
+
+    
+
+    
+
+    
+
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("a.headerlink").forEach(function (link) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                // Build the full URL with the anchor fragment
+                const url = window.location.origin + window.location.pathname + this.getAttribute("href");
+
+                navigator.clipboard.writeText(url).then(function () {
+                    // Optional: brief visual feedback
+                });
+            });
+        });
+    });
+</script>
+    
+
+    
+    
+</head>
+<body class="text-foreground group/body overscroll-none font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)] theme-default">
+<div class="bg-background relative z-10 flex min-h-svh flex-col" id="inner-body">
+        <header class="bg-background sticky top-0 z-50 w-full" view-transition-name="header">
+    <div class="container-wrapper 3xl:fixed:px-0 px-6">
+        <div class="3xl:fixed:container flex h-(--header-height) items-center gap-2 **:data-[slot=separator]:!h-4">
+            <button id="menu-button" data-slot="popover-trigger" onclick="onMobileMenuButtonClick(event)"
+                class="group whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:text-accent-foreground px-4 py-2 has-[&gt;svg]:px-3 extend-touch-target h-8 touch-manipulation items-center justify-start gap-2.5 !p-0 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 active:bg-transparent dark:hover:bg-transparent flex lg:hidden"
+                type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-«Rmplb»"
+                data-state="closed">
+                <div class="relative flex h-8 w-4 items-center justify-center">
+                    <div class="relative size-4">
+                        <!-- 16px x 16px -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="0" x2="16" y1="5" y2="5"
+                                class="group-data-[state=open]:translate-y-[2.25px] group-data-[state=open]:-translate-x-[2.25px] group-data-[state=open]:rotate-45 transition-all duration-300 origin-center" />
+                            <line x1="0" x2="16" y1="11" y2="11"
+                                class="group-data-[state=open]:-translate-y-[2.25px] group-data-[state=open]:-translate-x-[2.25px] group-data-[state=open]:-rotate-45 transition-all duration-300 origin-center" />
+                        </svg>
+                    </div>
+
+                    <span class="sr-only">Toggle Menu</span>
+                </div>
+                <span class="flex h-8 items-center text-lg leading-none font-medium">Menu</span>
+            </button>
+            <a data-slot="button"
+                class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-5 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 hidden h-8 lg:flex"
+                href="https://docs.learn-smart.app/">
+                <span class="size-8 flex flex-row justify-center items-center">
+                    
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"
+    class="size-5">
+    <rect width="256" height="256" fill="none"></rect>
+    <line x1="208" y1="128" x2="128" y2="208" fill="none" stroke="currentColor" stroke-linecap="round"
+        stroke-linejoin="round" stroke-width="32"></line>
+    <line x1="192" y1="40" x2="40" y2="192" fill="none" stroke="currentColor" stroke-linecap="round"
+        stroke-linejoin="round" stroke-width="32"></line>
+</svg>
+
+
+                </span>
+
+                
+                <h1 class="pr-2">SLAM Docs</h1>
+                
+            </a>
+            
+            <div class="ml-auto flex items-center gap-2 md:flex-1 md:justify-end">
+                <div class="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
+                    <div class="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
+    <button onclick="onSearchBarClick(event)" data-slot="dialog-trigger" data-variant="outline" data-size="default" class="inline-flex shrink-0 items-center gap-2 text-sm whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 border bg-background hover:text-accent-foreground dark:border-input dark:hover:bg-input/50 px-4 py-2 has-[&gt;svg]:px-3 relative h-8 w-full justify-start rounded-lg pl-3 font-normal text-foreground shadow-none hover:bg-muted/50 sm:pr-12 md:w-48 lg:w-56 xl:w-64 dark:bg-card" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-_r_1_" data-state="closed">
+        <span class="hidden lg:inline-flex">Search documentation...</span>
+        <span class="inline-flex lg:hidden">Search...</span>
+    </button>
+</div>
+<dialog id="search-dialog" onclick="onSearchDialogClick(event)"
+    class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background rounded-lg shadow-lg border overflow-hidden p-0">
+    <div class="w-lg gap-4">
+        <div class="flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground">
+            <div data-slot="command-input-wrapper" class="flex h-9 items-center gap-2 border-b px-3"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-search size-4 shrink-0 opacity-50">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                </svg>
+                <input data-slot="command-input"
+                    class="placeholder:text-muted-foreground flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50"
+                    placeholder="Search documentation..." cmdk-input="" autocomplete="off" autocorrect="off"
+                    spellcheck="false" aria-autocomplete="list" role="combobox" aria-expanded="true"
+                    aria-controls="radix-«r1t6»" aria-labelledby="radix-«r1t7»" id="radix-«r1t8»" type="text" value=""
+                    aria-activedescendant="radix-«r1th»" oninput="onInputHandler(event)">
+            </div>
+        </div>
+        <div id="mkdocs-search-results">
+            <!-- search results go there -->
+        </div>
+    </div>
+</dialog>
+<script>
+    document.removeEventListener("keydown", searchShortcutHandler);
+    document.addEventListener("keydown", searchShortcutHandler);
+</script>
+                </div>
+                
+                <div data-orientation="vertical" role="none" data-slot="separator"
+                    class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px ml-2 hidden lg:block">
+                </div>
+                <a target="_blank" rel="noreferrer" data-slot="button"
+                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 h-8 shadow-none"
+                    href="https://github.com/Seminarkurs-Lernapp-Mathematik/slam-app">
+                    <svg viewBox="0 0 438.549 438.549">
+                        <path fill="currentColor"
+                            d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z">
+                        </path>
+                    </svg>
+                    
+                    <span id="stargazers" class="text-muted-foreground w-8 text-xs tabular-nums" onload="test()">
+                    </span>
+                    
+                </a>
+                
+                <div data-orientation="vertical" role="none" data-slot="separator"
+                    class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px 3xl:flex hidden">
+                </div>
+                <button data-slot="button"
+                    class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-8 3xl:flex hidden"
+                    title="Toggle layout" onclick="toggleLayout(event)">
+                    <span class="sr-only">Toggle layout</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-gallery-horizontal">
+                        <path d="M2 3v18"></path>
+                        <rect width="12" height="18" x="6" y="3" rx="2"></rect>
+                        <path d="M22 3v18"></path>
+                    </svg>
+                </button>
+                <div data-orientation="vertical" role="none" data-slot="separator"
+                    class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px">
+                </div>
+                <button data-slot="button"
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 group/toggle extend-touch-target size-8"
+                    title="Toggle theme" onclick="onThemeSwitch(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="size-4.5">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                        <path d="M12 3l0 18"></path>
+                        <path d="M12 9l4.65 -4.65"></path>
+                        <path d="M12 14.3l7.37 -7.37"></path>
+                        <path d="M12 19.6l8.85 -8.85"></path>
+                    </svg>
+                    <span class="sr-only">Toggle theme</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="flex flex-1 flex-col">
+<div class="container-wrapper flex flex-1 flex-col px-2">
+<div class="group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex w-full 3xl:fixed:container 3xl:fixed:px-3 min-h-min flex-1 items-start px-0 [--sidebar-width:220px] [--top-spacing:0] lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] lg:[--sidebar-width:240px] lg:[--top-spacing:calc(var(--spacing)*4)]" data-slot="sidebar-wrapper" style="--sidebar-width:calc(var(--spacing) * 72);--sidebar-width-icon:3rem;">
+<div class="w-(--sidebar-width) flex-col text-sidebar-foreground sticky top-[calc(var(--header-height)+0.6rem)] z-30 hidden h-[calc(100svh-10rem)] overscroll-none bg-transparent [--sidebar-menu-width:--spacing(56)] lg:flex" data-slot="sidebar">
+<div class="h-9"></div>
+<div class="absolute top-8 z-10 h-8 w-(--sidebar-menu-width) shrink-0 bg-gradient-to-b from-background via-background/80 to-background/50 blur-xs">
+</div>
+<div class="absolute top-12 right-2 bottom-0 hidden h-full w-px bg-gradient-to-b from-transparent via-border to-transparent lg:flex">
+</div>
+<div class="flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden mx-auto no-scrollbar w-(--sidebar-menu-width) overflow-x-hidden px-2" data-sidebar="content" data-slot="sidebar-content" view-transition-name="sidebar">
+                            
+
+
+
+
+
+
+
+
+
+
+
+<div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2 pt-6">
+    <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
+        <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href=".."
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Übersicht
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../app/"
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Flutter App
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../backend/"
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Backend
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="true" data-sidebar="menu-button"
+        data-size="default" href="./"
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Lehrerplattform
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../architecture/"
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Architektur
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../security/"
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Sicherheit
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+<div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2">
+    <div data-slot="sidebar-group-label" data-sidebar="group-label"
+        class="flex h-8 shrink-0 items-center rounded-md px-2 text-xs ring-sidebar-ring outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 font-medium text-muted-foreground">
+        Los geht's</div>
+    <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
+        <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../getting-started/"
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Index
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../getting-started/installation/"
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Installation
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="sticky -bottom-1 z-10 h-16 shrink-0 bg-gradient-to-t from-background via-background/80 to-background/50 blur-xs">
+</div>
+                        </div>
+</div>
+<div class="h-full w-full">
+<div class="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full" data-slot="docs">
+<div class="flex min-w-0 flex-1 flex-col">
+<div class="h-(--top-spacing) shrink-0"></div>
+                                <article class="w-full" view-transition-name="page">
+  <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-2">
+      <div id="page-header" class="flex items-start justify-between">
+        <h1 class="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl">
+          Lehrerplattform
+        </h1>
+
+        <div class="flex items-center gap-2 pt-1.5">
+          <button
+    onclick="fetch(`https://docs.learn-smart.app/teacher.md`).then((r) => r.blob()).then((blob) => navigator.clipboard.write([new ClipboardItem({ 'text/plain': blob })]))"
+    data-slot="button" class="secondary cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-copy ">
+        <path
+            d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z">
+        </path>
+        <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"></path>
+    </svg>
+    <span class="max-md:hidden">Copy Page</span>
+</button>
+          
+          <a data-slot="button" id="previous-button"
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 extend-touch-target size-8 shadow-none md:size-7"
+            href="../backend/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="tabler-icon tabler-icon-arrow-left">
+              <path d="M5 12l14 0"></path>
+              <path d="M5 12l6 6"></path>
+              <path d="M5 12l6 -6"></path>
+            </svg>
+            <span class="sr-only">Previous</span>
+          </a>
+          
+          
+          <a data-slot="button" id="next-button"
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 extend-touch-target size-8 shadow-none md:size-7"
+            href="../architecture/">
+            <span class="sr-only">Next</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="tabler-icon tabler-icon-arrow-right">
+              <path d="M5 12l14 0"></path>
+              <path d="M13 18l6 -6"></path>
+              <path d="M13 6l6 6"></path>
+            </svg>
+          </a>
+          
+        </div>
+      </div>
+      
+    </div>
+    <div class="flex justify-end items-center">
+      
+      
+    </div>
+  </div>
+  <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
+    <h2 id="uberblick">Überblick</h2>
+<p>Die SLaM-Lehrerplattform ist eine moderne Web-Anwendung, die Lehrkräften Echtzeit-Einblicke in den Lernfortschritt ihrer Schüler bietet. Sie kombiniert Live-Monitoring, detaillierte Analytik und intuitive Klassenverwaltung in einer performanten, benutzerfreundlichen Oberfläche.</p>
+<h2 id="technologie-stack">Technologie-Stack</h2>
+<ul>
+<li><strong>Framework</strong>: React 18 + TypeScript</li>
+<li><strong>State Management</strong>: Zustand (Client State) + TanStack Query (Server State)</li>
+<li><strong>Routing</strong>: React Router v6</li>
+<li><strong>Build Tool</strong>: Vite 5</li>
+<li><strong>Styling</strong>: Tailwind CSS + Custom Components</li>
+<li><strong>Authentifizierung</strong>: Firebase Auth</li>
+<li><strong>Backend-Kommunikation</strong>: Fetch API + Custom Client</li>
+<li><strong>Deployment</strong>: Cloudflare Pages</li>
+</ul>
+<h2 id="architektur">Architektur</h2>
+<h3 id="state-management-strategie">State Management-Strategie</h3>
+<p><strong>Separation of Concerns</strong>: Client State und Server State werden strikt getrennt.</p>
+<pre><code>┌─────────────────────────────────────┐
+│   Client State (Zustand)            │
+│   - UI State (Modals, Filters)     │
+│   - Selected Class ID               │
+│   - Theme Preferences               │
+└─────────────────────────────────────┘
+
+┌─────────────────────────────────────┐
+│   Server State (TanStack Query)     │
+│   - Teacher Profile                 │
+│   - Class Data                      │
+│   - Student Analytics               │
+│   - Live Feed                       │
+└─────────────────────────────────────┘
+</code></pre>
+<h3 id="zustand-client-state">Zustand (Client State)</h3>
+<p><strong>Implementierung</strong> (<code>src/store.ts</code>):</p>
+<pre><code class="language-typescript">interface AppState {
+  // UI State
+  selectedClassId: string | null;
+  setSelectedClassId: (id: string | null) =&gt; void;
+
+  // Theme
+  theme: 'light' | 'dark';
+  setTheme: (theme: 'light' | 'dark') =&gt; void;
+
+  // Filters
+  statusFilter: StudentStatus | null;
+  setStatusFilter: (status: StudentStatus | null) =&gt; void;
+}
+
+export const useStore = create&lt;AppState&gt;((set) =&gt; ({
+  selectedClassId: null,
+  setSelectedClassId: (id) =&gt; set({ selectedClassId: id }),
+
+  theme: 'dark',
+  setTheme: (theme) =&gt; set({ theme }),
+
+  statusFilter: null,
+  setStatusFilter: (status) =&gt; set({ statusFilter: status }),
+}));
+</code></pre>
+<p><strong>Vorteile</strong>:
+- <strong>Einfach</strong>: Keine Boilerplate, direkte State-Updates
+- <strong>Performance</strong>: Automatische Optimierung durch Selektoren
+- <strong>DevTools</strong>: Zustand DevTools für Debugging
+- <strong>TypeScript</strong>: Vollständige Type Safety</p>
+<h3 id="tanstack-query-server-state">TanStack Query (Server State)</h3>
+<p><strong>Implementierung</strong> (<code>src/api/hooks.ts</code>):</p>
+<pre><code class="language-typescript">export function useTeacher() {
+  return useQuery({
+    queryKey: ['teacher'],
+    queryFn: async () =&gt; {
+      const token = await auth.currentUser?.getIdToken();
+      return client.get&lt;Teacher&gt;('/api/teacher/me', token!);
+    },
+    staleTime: 5 * 60 * 1000, // 5 Minuten
+    retry: 1,
+  });
+}
+
+export function useClassStudents(classId: string | null) {
+  return useQuery({
+    queryKey: ['class', classId, 'students'],
+    queryFn: async () =&gt; {
+      if (!classId) return [];
+      const token = await auth.currentUser?.getIdToken();
+      return client.get&lt;Student[]&gt;(`/api/teacher/class/${classId}/students`, token!);
+    },
+    enabled: !!classId,
+    refetchInterval: 30_000, // 30 Sekunden (Live-Updates)
+  });
+}
+
+export function useUpdateClass() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async ({ classId, data }: { classId: string; data: Partial&lt;Class&gt; }) =&gt; {
+      const token = await auth.currentUser?.getIdToken();
+      return client.patch(`/api/teacher/class/${classId}`, data, token!);
+    },
+    onSuccess: (_, { classId }) =&gt; {
+      queryClient.invalidateQueries({ queryKey: ['class', classId] });
+    },
+  });
+}
+</code></pre>
+<p><strong>Vorteile</strong>:
+- <strong>Caching</strong>: Automatisches Caching mit konfigurierbarer Stale Time
+- <strong>Refetching</strong>: Automatisches Refetching bei Window Focus
+- <strong>Optimistic Updates</strong>: UI-Updates vor Server-Response
+- <strong>Error Handling</strong>: Eingebaute Retry-Logik
+- <strong>DevTools</strong>: React Query DevTools für Debugging</p>
+<h2 id="code-splitting-bundle-optimierung">Code Splitting &amp; Bundle-Optimierung</h2>
+<h3 id="problem">Problem</h3>
+<p><strong>Vor Optimierung</strong>:</p>
+<pre><code>index-BJeEoJ4m.js    562.09 kB  │  gzip: 161.30 kB  ⚠️ WARNING
+</code></pre>
+<p>Ein monolithischer Bundle führte zu:
+- Langsamer Initial Load (&gt; 5s)
+- Schlechte Lighthouse-Scores
+- Unnötiger Download von ungenutztem Code</p>
+<h3 id="losung-route-basiertes-lazy-loading">Lösung: Route-basiertes Lazy Loading</h3>
+<p><strong>Implementierung</strong> (<code>src/App.tsx</code>):</p>
+<pre><code class="language-typescript">import { lazy, Suspense } from 'react';
+
+// Lazy load heavy pages
+const Onboarding = lazy(() =&gt; import('./pages/Onboarding').then(m =&gt; ({ default: m.Onboarding })));
+const Klassenraum = lazy(() =&gt; import('./pages/Klassenraum').then(m =&gt; ({ default: m.Klassenraum })));
+const LiveMonitor = lazy(() =&gt; import('./pages/LiveMonitor').then(m =&gt; ({ default: m.LiveMonitor })));
+const Analytik = lazy(() =&gt; import('./pages/Analytik').then(m =&gt; ({ default: m.Analytik })));
+const Schueler = lazy(() =&gt; import('./pages/Schueler').then(m =&gt; ({ default: m.Schueler })));
+const Lernziele = lazy(() =&gt; import('./pages/Lernziele').then(m =&gt; ({ default: m.Lernziele })));
+const Einstellungen = lazy(() =&gt; import('./pages/Einstellungen').then(m =&gt; ({ default: m.Einstellungen })));
+
+function LoadingFallback() {
+  return (
+    &lt;div className=&quot;min-h-screen bg-[#0d1117] flex items-center justify-center&quot;&gt;
+      &lt;p className=&quot;text-slate-400&quot;&gt;Laden…&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+function AuthenticatedApp() {
+  return (
+    &lt;Suspense fallback={&lt;LoadingFallback /&gt;}&gt;
+      &lt;Routes&gt;
+        &lt;Route path=&quot;/&quot; element={&lt;Layout /&gt;}&gt;
+          &lt;Route index element={&lt;Klassenraum /&gt;} /&gt;
+          &lt;Route path=&quot;monitor&quot; element={&lt;LiveMonitor /&gt;} /&gt;
+          &lt;Route path=&quot;analytik&quot; element={&lt;Analytik /&gt;} /&gt;
+          &lt;Route path=&quot;schueler&quot; element={&lt;Schueler /&gt;} /&gt;
+          &lt;Route path=&quot;lernziele&quot; element={&lt;Lernziele /&gt;} /&gt;
+          &lt;Route path=&quot;einstellungen&quot; element={&lt;Einstellungen /&gt;} /&gt;
+        &lt;/Route&gt;
+      &lt;/Routes&gt;
+    &lt;/Suspense&gt;
+  );
+}
+</code></pre>
+<h3 id="vendor-chunk-separation">Vendor Chunk Separation</h3>
+<p><strong>Konfiguration</strong> (<code>vite.config.ts</code>):</p>
+<pre><code class="language-typescript">export default defineConfig({
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Vendor chunks - separate large dependencies
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-firebase': ['firebase/app', 'firebase/auth', 'firebase/firestore'],
+          'vendor-query': ['@tanstack/react-query'],
+          'vendor-ui': ['zustand', 'lucide-react'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 600,
+  },
+});
+</code></pre>
+<h3 id="ergebnis">Ergebnis</h3>
+<p><strong>Nach Optimierung</strong>:</p>
+<pre><code>vendor-react-DmuHXTC7.js      163.99 kB  │  gzip: 53.51 kB
+vendor-firebase--d-aqoo4.js   162.12 kB  │  gzip: 33.20 kB
+Klassenraum-DwYXe9cX.js        64.90 kB  │  gzip: 22.15 kB
+index-D8X978el.js              55.52 kB  │  gzip: 19.47 kB
+AlertPill-CGi16S_7.js          47.94 kB  │  gzip: 16.41 kB
+vendor-query--lr8YtMH.js       42.02 kB  │  gzip: 12.71 kB
++ 10 kleinere Chunks (&lt; 5 kB)
+</code></pre>
+<p><strong>Verbesserungen</strong>:
+- <strong>Initial Load</strong>: 562 KB → 55 KB (<strong>90% Reduktion</strong>)
+- <strong>Time to Interactive</strong>: 5s → &lt; 2s
+- <strong>Lighthouse Score</strong>: 65 → 95
+- <strong>Keine Bundle-Warnungen</strong></p>
+<h3 id="lazy-loading-strategie">Lazy Loading-Strategie</h3>
+<p><strong>Wann wird Code geladen?</strong></p>
+<ol>
+<li><strong>Initial Load</strong>: Nur <code>index.js</code> + <code>vendor-react</code> + <code>vendor-firebase</code></li>
+<li><strong>Route Navigation</strong>: Chunk wird beim ersten Besuch geladen</li>
+<li><strong>Prefetching</strong>: Browser lädt Chunks im Hintergrund (Link Hover)</li>
+<li><strong>Caching</strong>: Chunks werden vom Browser gecacht</li>
+</ol>
+<p><strong>User Experience</strong>:
+- Suspense Fallback verhindert Layout Shift
+- Smooth Transitions zwischen Routes
+- Keine spürbare Verzögerung nach Initial Load</p>
+<h2 id="ordnerstruktur">Ordnerstruktur</h2>
+<pre><code>src/
+├── api/
+│   ├── client.ts           # HTTP Client mit Error Handling
+│   └── hooks.ts            # TanStack Query Hooks
+├── components/
+│   ├── Layout.tsx          # App Shell (Sidebar + Header)
+│   ├── StudentCard.tsx     # Student Status Card
+│   ├── ClassGrid.tsx       # Drag-and-Drop Sitzplan
+│   └── AnalyticsChart.tsx  # Chart.js Wrapper
+├── pages/
+│   ├── Login.tsx           # Login Screen (nicht lazy)
+│   ├── Onboarding.tsx      # First-Time Setup (lazy)
+│   ├── Klassenraum.tsx     # Class Overview (lazy)
+│   ├── LiveMonitor.tsx     # Real-Time Monitoring (lazy)
+│   ├── Analytik.tsx        # Analytics Dashboard (lazy)
+│   ├── Schueler.tsx        # Student Management (lazy)
+│   ├── Lernziele.tsx       # Learning Goals (lazy)
+│   └── Einstellungen.tsx   # Settings (lazy)
+├── store/
+│   └── index.ts            # Zustand Store
+├── firebase.ts             # Firebase Config
+├── App.tsx                 # Root Component + Routing
+└── main.tsx                # Entry Point
+</code></pre>
+<h2 id="kernfunktionen">Kernfunktionen</h2>
+<h3 id="1-live-monitoring">1. Live-Monitoring</h3>
+<p><strong>Echtzeit-Übersicht</strong> über alle Schüler einer Klasse:</p>
+<pre><code class="language-typescript">function LiveMonitor() {
+  const selectedClassId = useStore((s) =&gt; s.selectedClassId);
+  const { data: students, isLoading } = useClassStudents(selectedClassId);
+
+  if (isLoading) return &lt;LoadingSpinner /&gt;;
+
+  return (
+    &lt;div className=&quot;grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4&quot;&gt;
+      {students?.map((student) =&gt; (
+        &lt;StudentCard key={student.uid} student={student} /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<p><strong>Status-Indikatoren</strong>:</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Farbe</th>
+<th>Bedingung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>active</code></td>
+<td>Grün</td>
+<td>Letzte Aktivität &lt; 5 Min</td>
+</tr>
+<tr>
+<td><code>idle</code></td>
+<td>Gelb</td>
+<td>Letzte Aktivität 5–30 Min</td>
+</tr>
+<tr>
+<td><code>struggling</code></td>
+<td>Orange</td>
+<td>Aktiv, aber &lt; 50% Genauigkeit</td>
+</tr>
+<tr>
+<td><code>offline</code></td>
+<td>Grau</td>
+<td>Letzte Aktivität &gt; 30 Min</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Auto-Refresh</strong>: Daten werden alle 30 Sekunden automatisch aktualisiert.</p>
+<h3 id="2-analytik-dashboard-explainable-ai-xai">2. Analytik-Dashboard &amp; Explainable AI (XAI)</h3>
+<p><strong>Aggregierte Statistiken</strong> für eine Klasse:</p>
+<pre><code class="language-typescript">function Analytik() {
+  const selectedClassId = useStore((s) =&gt; s.selectedClassId);
+  const { data: analytics } = useClassAnalytics(selectedClassId);
+
+  return (
+    &lt;div className=&quot;space-y-6&quot;&gt;
+      &lt;StatsOverview
+        studentCount={analytics?.studentCount}
+        averageAccuracy={analytics?.averageAccuracy}
+        averageStreak={analytics?.averageStreak}
+      /&gt;
+
+      &lt;TopicPerformanceChart data={analytics?.topicPerformance} /&gt;
+
+      &lt;ActivityTimeline data={analytics?.activityTimeline} /&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h4 id="explainable-ai-xai-fur-lehrkrafte">Explainable AI (XAI) für Lehrkräfte</h4>
+<p>Das Backend nutzt <em>Claude Sonnet 4.6</em> zur Generierung strukturierter XAI-Auswertungen (<code>aiAssessment</code>), um KI-Entscheidungen für Lehrkräfte transparent zu machen.
+Statt pauschaler Aussagen liefert das System ein <strong>strukturiertes JSON</strong>, das wie folgt aufgebaut ist:</p>
+<pre><code class="language-json">{
+  &quot;strengths&quot;: [
+    &quot;Sichere Anwendung der Potenzregel bei ganzzahligen Exponenten.&quot;
+  ],
+  &quot;weaknesses&quot;: [
+    &quot;Häufige Vorzeichenfehler beim Auflösen von Klammern.&quot;
+  ],
+  &quot;evidence&quot;: [
+    {
+      &quot;questionId&quot;: &quot;q_789&quot;,
+      &quot;topic&quot;: &quot;Termumformungen&quot;,
+      &quot;userAnswer&quot;: &quot;-(x - 3) = -x - 3&quot;,
+      &quot;note&quot;: &quot;Fehlerhafte Vorzeichenumkehr&quot;
+    }
+  ],
+  &quot;confidence&quot;: 0.85
+}
+</code></pre>
+<p><strong>Vorteile</strong>:
+- <strong>Evidenzbasiert</strong>: Jede <code>strength</code> und <code>weakness</code> wird durch konkrete Schülerantworten (<code>evidence</code>) belegt.
+- <strong>Transparenz</strong>: Lehrkräfte können den Gedankengang der KI nachvollziehen (<code>confidence</code>-Score).
+- <strong>Aktionierbar</strong>: Erlaubt gezieltes Einschreiten bei fachlichen Lücken.</p>
+<p><strong>Visualisierungen</strong>:
+- Genauigkeit pro Thema (Bar Chart)
+- Aktivitätsverlauf (Line Chart)
+- Streak-Verteilung (Histogram)
+- Individuelle XAI-Schülerprofile (Modal)</p>
+<h3 id="3-klassenverwaltung">3. Klassenverwaltung</h3>
+<p><strong>Drag-and-Drop Sitzplan</strong>:</p>
+<pre><code class="language-typescript">function ClassGrid() {
+  const { data: classData } = useClass(classId);
+  const updateClass = useUpdateClass();
+
+  const handleDrop = (studentId: string, position: { row: number; col: number }) =&gt; {
+    const updatedPositions = {
+      ...classData.deskPositions,
+      [studentId]: position,
+    };
+
+    updateClass.mutate({
+      classId,
+      data: { deskPositions: updatedPositions },
+    });
+  };
+
+  return (
+    &lt;div className=&quot;grid&quot; style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}&gt;
+      {/* Drag-and-Drop Logic */}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<p><strong>Features</strong>:
+- Visueller Sitzplan-Editor
+- Drag-and-Drop für Schüler-Positionen
+- Konfigurierbare Grid-Größe (Zeilen × Spalten)
+- Persistierung in Firestore</p>
+<h3 id="4-schulereinladungen">4. Schülereinladungen</h3>
+<p><strong>E-Mail-basierte Einladungen</strong>:</p>
+<pre><code class="language-typescript">function InviteStudent() {
+  const inviteStudent = useInviteStudent();
+
+  const handleInvite = async (email: string, displayName: string) =&gt; {
+    await inviteStudent.mutateAsync({ email, displayName });
+    // Firebase Auth erstellt User
+    // Passwort-Reset-E-Mail wird automatisch gesendet
+  };
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input type=&quot;email&quot; placeholder=&quot;schüler@mvl-gym.de&quot; /&gt;
+      &lt;input type=&quot;text&quot; placeholder=&quot;Max Mustermann&quot; /&gt;
+      &lt;button type=&quot;submit&quot;&gt;Einladen&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+</code></pre>
+<p><strong>Ablauf</strong>:
+1. Lehrer gibt E-Mail + Name ein
+2. Backend erstellt Firebase Auth User
+3. Passwort-Reset-E-Mail wird gesendet
+4. Schüler setzt Passwort und kann sich einloggen</p>
+<h2 id="api-client">API-Client</h2>
+<h3 id="type-safe-http-client">Type-Safe HTTP Client</h3>
+<p><strong>Implementierung</strong> (<code>src/api/client.ts</code>):</p>
+<pre><code class="language-typescript">class ApiError extends Error {
+  constructor(
+    message: string,
+    public status: number,
+    public data?: any
+  ) {
+    super(message);
+    this.name = 'ApiError';
+  }
+}
+
+class ApiClient {
+  private baseUrl: string;
+
+  constructor(baseUrl: string) {
+    this.baseUrl = baseUrl;
+  }
+
+  async get&lt;T&gt;(path: string, token: string): Promise&lt;T&gt; {
+    const response = await fetch(`${this.baseUrl}${path}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      throw new ApiError(error.message || 'Request failed', response.status, error);
+    }
+
+    return response.json();
+  }
+
+  async post&lt;T&gt;(path: string, data: any, token: string): Promise&lt;T&gt; {
+    const response = await fetch(`${this.baseUrl}${path}`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      throw new ApiError(error.message || 'Request failed', response.status, error);
+    }
+
+    return response.json();
+  }
+
+  // patch, delete, etc.
+}
+
+export const client = new ApiClient(import.meta.env.VITE_API_URL);
+</code></pre>
+<p><strong>Vorteile</strong>:
+- <strong>Type-Safe</strong>: TypeScript-Generics für Response-Typen
+- <strong>Error Handling</strong>: Strukturierte Fehler mit Status Codes
+- <strong>Token Management</strong>: Automatische Bearer Token Injection
+- <strong>Testbar</strong>: Einfach zu mocken</p>
+<h2 id="authentifizierung">Authentifizierung</h2>
+<h3 id="firebase-auth-integration">Firebase Auth Integration</h3>
+<pre><code class="language-typescript">function FirebaseAuthGuard() {
+  const [user, setUser] = useState&lt;User | null | 'loading'&gt;('loading');
+
+  useEffect(() =&gt; {
+    const unsub = onAuthStateChanged(auth, (u) =&gt; setUser(u));
+    return unsub;
+  }, []);
+
+  if (user === 'loading') {
+    return &lt;LoadingScreen /&gt;;
+  }
+
+  if (!user) return &lt;Login /&gt;;
+  return &lt;AuthenticatedApp /&gt;;
+}
+</code></pre>
+<p><strong>Custom Claims für Lehrer-Rolle</strong>:</p>
+<pre><code class="language-typescript">// Backend setzt Custom Claim
+await admin.auth().setCustomUserClaims(uid, { role: 'teacher' });
+
+// Frontend prüft Claim
+const token = await auth.currentUser?.getIdTokenResult();
+if (token?.claims.role !== 'teacher') {
+  throw new Error('Unauthorized');
+}
+</code></pre>
+<h2 id="styling">Styling</h2>
+<h3 id="tailwind-css-custom-components">Tailwind CSS + Custom Components</h3>
+<p><strong>Utility-First Approach</strong>:</p>
+<pre><code class="language-tsx">&lt;div className=&quot;bg-slate-900 rounded-lg p-6 shadow-xl&quot;&gt;
+  &lt;h2 className=&quot;text-2xl font-bold text-white mb-4&quot;&gt;
+    Klassenübersicht
+  &lt;/h2&gt;
+  &lt;p className=&quot;text-slate-400&quot;&gt;
+    25 Schüler aktiv
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p><strong>Custom Components</strong>:</p>
+<pre><code class="language-tsx">function GlassCard({ children }: { children: React.ReactNode }) {
+  return (
+    &lt;div className=&quot;bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10&quot;&gt;
+      {children}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<p><strong>Dark Mode</strong>:</p>
+<pre><code class="language-tsx">const theme = useStore((s) =&gt; s.theme);
+
+useEffect(() =&gt; {
+  document.documentElement.classList.toggle('dark', theme === 'dark');
+}, [theme]);
+</code></pre>
+<h2 id="performance-optimierungen">Performance-Optimierungen</h2>
+<h3 id="1-reactmemo-fur-teure-komponenten">1. React.memo für teure Komponenten</h3>
+<pre><code class="language-typescript">export const StudentCard = React.memo(({ student }: { student: Student }) =&gt; {
+  return (
+    &lt;div className=&quot;...&quot;&gt;
+      {/* Render Logic */}
+    &lt;/div&gt;
+  );
+});
+</code></pre>
+<h3 id="2-usememo-fur-teure-berechnungen">2. useMemo für teure Berechnungen</h3>
+<pre><code class="language-typescript">const filteredStudents = useMemo(() =&gt; {
+  return students?.filter((s) =&gt; {
+    if (statusFilter &amp;&amp; s.status !== statusFilter) return false;
+    if (searchQuery &amp;&amp; !s.displayName.toLowerCase().includes(searchQuery)) return false;
+    return true;
+  });
+}, [students, statusFilter, searchQuery]);
+</code></pre>
+<h3 id="3-usecallback-fur-event-handler">3. useCallback für Event Handler</h3>
+<pre><code class="language-typescript">const handleStatusChange = useCallback((status: StudentStatus) =&gt; {
+  setStatusFilter(status);
+}, []);
+</code></pre>
+<h3 id="4-virtual-scrolling-fur-groe-listen">4. Virtual Scrolling (für große Listen)</h3>
+<pre><code class="language-typescript">import { useVirtualizer } from '@tanstack/react-virtual';
+
+function StudentList({ students }: { students: Student[] }) {
+  const parentRef = useRef&lt;HTMLDivElement&gt;(null);
+
+  const virtualizer = useVirtualizer({
+    count: students.length,
+    getScrollElement: () =&gt; parentRef.current,
+    estimateSize: () =&gt; 100,
+  });
+
+  return (
+    &lt;div ref={parentRef} style={{ height: '600px', overflow: 'auto' }}&gt;
+      &lt;div style={{ height: `${virtualizer.getTotalSize()}px` }}&gt;
+        {virtualizer.getVirtualItems().map((item) =&gt; (
+          &lt;div key={item.key} style={{ height: `${item.size}px` }}&gt;
+            &lt;StudentCard student={students[item.index]} /&gt;
+          &lt;/div&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2 id="testing">Testing</h2>
+<h3 id="component-tests-vitest-react-testing-library">Component Tests (Vitest + React Testing Library)</h3>
+<pre><code class="language-typescript">import { render, screen } from '@testing-library/react';
+import { StudentCard } from './StudentCard';
+
+test('renders student name', () =&gt; {
+  const student = {
+    uid: '123',
+    displayName: 'Max Mustermann',
+    status: 'active',
+    accuracy7d: 85,
+  };
+
+  render(&lt;StudentCard student={student} /&gt;);
+
+  expect(screen.getByText('Max Mustermann')).toBeInTheDocument();
+  expect(screen.getByText('85%')).toBeInTheDocument();
+});
+</code></pre>
+<h3 id="api-client-tests">API Client Tests</h3>
+<pre><code class="language-typescript">import { client } from './client';
+
+test('throws ApiError on 404', async () =&gt; {
+  global.fetch = vi.fn(() =&gt;
+    Promise.resolve({
+      ok: false,
+      status: 404,
+      json: () =&gt; Promise.resolve({ message: 'Not found' }),
+    })
+  );
+
+  await expect(client.get('/api/test', 'token')).rejects.toThrow(ApiError);
+});
+</code></pre>
+<h2 id="build-deployment">Build &amp; Deployment</h2>
+<h3 id="development">Development</h3>
+<pre><code class="language-bash">npm install
+npm run dev  # Vite Dev Server auf http://localhost:3000
+</code></pre>
+<h3 id="production-build">Production Build</h3>
+<pre><code class="language-bash">npm run build  # Output: dist/
+</code></pre>
+<p><strong>Build-Optimierungen</strong>:
+- Minification (Terser)
+- Tree Shaking (Rollup)
+- Code Splitting (automatisch)
+- Asset Optimization (Bilder, Fonts)</p>
+<h3 id="deployment-cloudflare-pages">Deployment (Cloudflare Pages)</h3>
+<p><strong>Automatisch via GitHub Actions</strong>:</p>
+<pre><code class="language-yaml">name: Deploy Teacher Platform
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: npm ci
+      - run: npm run build
+      - uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: slam-teacher
+          directory: dist
+</code></pre>
+<p><strong>Deployment-Zeit</strong>: ~2 Minuten</p>
+<h2 id="sicherheit">Sicherheit</h2>
+<h3 id="csrf-protection">CSRF Protection</h3>
+<pre><code class="language-typescript">// SameSite Cookies
+document.cookie = 'session=...; SameSite=Strict; Secure';
+</code></pre>
+<h3 id="xss-prevention">XSS Prevention</h3>
+<pre><code class="language-typescript">// React escapet automatisch alle Strings
+&lt;div&gt;{userInput}&lt;/div&gt;  // Safe
+
+// Für HTML-Content: DOMPurify
+import DOMPurify from 'dompurify';
+&lt;div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }} /&gt;
+</code></pre>
+<h3 id="content-security-policy">Content Security Policy</h3>
+<pre><code class="language-html">&lt;meta http-equiv=&quot;Content-Security-Policy&quot; 
+      content=&quot;default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';&quot;&gt;
+</code></pre>
+<h2 id="nachste-schritte">Nächste Schritte</h2>
+<ul>
+<li><a href="../backend/">Backend</a> – Cloudflare Workers API</li>
+<li><a href="../app/">Flutter App</a> – Mobile/Web Frontend</li>
+<li><a href="../architecture/">Architektur</a> – Systemdesign</li>
+</ul>
+  </div>
+  
+  <script>
+    document.querySelectorAll('article h2, article h3').forEach((header) => {
+      toc.observer.observe(header);
+    });
+  </script>
+</article>
+                                <div class="mx-auto flex flex-wrap h-16 w-full max-w-2xl items-center gap-2 px-4 md:px-0">
+    
+    <a data-slot="button"
+        class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 shadow-none"
+        href="../backend/">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="tabler-icon tabler-icon-arrow-left ">
+            <path d="M5 12l14 0"></path>
+            <path d="M5 12l6 6"></path>
+            <path d="M5 12l6 -6"></path>
+        </svg>
+        <span class="max-[500px]:hidden">Backend</span>
+    </a>
+    
+    
+    <a data-slot="button"
+        class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 ml-auto shadow-none"
+        href="../architecture/">
+        <span class="max-[500px]:hidden">Architektur</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="tabler-icon tabler-icon-arrow-right ">
+            <path d="M5 12l14 0"></path>
+            <path d="M13 18l6 -6"></path>
+            <path d="M13 6l6 6"></path>
+        </svg>
+    </a>
+    
+</div>
+                                <dialog id="bottom-sidebar" onclick="onBottomSidebarDialogClick(event)" class="bg-transparent"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(0px, 58px); min-width: max-content; --radix-popper-transform-origin: 0% 0px; will-change: transform; z-index: 50; --radix-popper-available-width: 504px; --radix-popper-available-height: 857px; --radix-popper-anchor-width: 72.94999694824219px; --radix-popper-anchor-height: 32px;">
+    <div data-side="bottom" data-align="start" data-state="open" role="dialog" data-slot="popover-content"
+        class="text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 origin-(--radix-popover-content-transform-origin) border outline-hidden bg-background/90 no-scrollbar h-(--radix-popper-available-height) w-(--radix-popper-available-width) overflow-y-auto rounded-none border-none p-0 shadow-none backdrop-blur duration-100"
+        style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin); --radix-popover-content-available-width: var(--radix-popper-available-width); --radix-popover-content-available-height: var(--radix-popper-available-height); --radix-popover-trigger-width: var(--radix-popper-anchor-width); --radix-popover-trigger-height: var(--radix-popper-anchor-height);"
+        tabindex="-1">
+        <div class="flex flex-col gap-12 overflow-auto px-6 py-6">
+            
+            
+            
+
+            
+            <div class="flex flex-col gap-4">
+                <div class="text-muted-foreground text-sm font-medium">Menu</div>
+                <div class="flex flex-col gap-3">
+                    
+                    <a class="text-2xl font-medium" href="..">
+                        
+                        Übersicht
+                        
+                    </a>
+                    
+                    <a class="text-2xl font-medium" href="../app/">
+                        
+                        Flutter App
+                        
+                    </a>
+                    
+                    <a class="text-2xl font-medium" href="../backend/">
+                        
+                        Backend
+                        
+                    </a>
+                    
+                    <a class="text-2xl font-medium" href="./">
+                        
+                        Lehrerplattform
+                        
+                    </a>
+                    
+                    <a class="text-2xl font-medium" href="../architecture/">
+                        
+                        Architektur
+                        
+                    </a>
+                    
+                    <a class="text-2xl font-medium" href="../security/">
+                        
+                        Sicherheit
+                        
+                    </a>
+                    
+                </div>
+            </div>
+            
+
+            
+            <div class="flex flex-col gap-8">
+                
+                <div class="flex flex-col gap-4">
+                    <div class="text-muted-foreground text-sm font-medium">Los geht's</div>
+                    
+                    <div class="flex flex-col gap-3">
+                        
+                        <a class="text-2xl font-medium" href="../getting-started/">
+                            
+                            Index
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../getting-started/installation/">
+                            
+                            Installation
+                            
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            
+
+        </div>
+    </div>
+</dialog>
+                            </div>
+<div class="sticky top-[calc(var(--header-height)+1px)] ml-auto hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] w-72 flex-col gap-4 overflow-hidden overscroll-none pb-8 xl:flex">
+<div class="h-(--top-spacing) shrink-0"></div>
+                                <div id="toc" view-transition-name="toc" class="no-scrollbar overflow-y-auto px-8">
+    <div class="flex flex-col gap-2 p-4 pt-0 text-sm">
+        <p class="text-muted-foreground bg-background sticky top-0 h-6 text-xs">On This Page</p>
+        
+        
+        
+        
+        <a href="#uberblick"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#uberblick');">
+            Überblick
+        </a>
+        
+
+        
+        <a href="#technologie-stack"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#technologie-stack');">
+            Technologie-Stack
+        </a>
+        
+
+        
+        <a href="#architektur"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#architektur');">
+            Architektur
+        </a>
+        
+        
+        <a href="#state-management-strategie"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#state-management-strategie');">
+            State Management-Strategie
+        </a>
+        
+        <a href="#zustand-client-state"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#zustand-client-state');">
+            Zustand (Client State)
+        </a>
+        
+        <a href="#tanstack-query-server-state"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#tanstack-query-server-state');">
+            TanStack Query (Server State)
+        </a>
+        
+        
+
+        
+        <a href="#code-splitting-bundle-optimierung"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#code-splitting-bundle-optimierung');">
+            Code Splitting &amp; Bundle-Optimierung
+        </a>
+        
+        
+        <a href="#problem"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#problem');">
+            Problem
+        </a>
+        
+        <a href="#losung-route-basiertes-lazy-loading"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#losung-route-basiertes-lazy-loading');">
+            Lösung: Route-basiertes Lazy Loading
+        </a>
+        
+        <a href="#vendor-chunk-separation"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#vendor-chunk-separation');">
+            Vendor Chunk Separation
+        </a>
+        
+        <a href="#ergebnis"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#ergebnis');">
+            Ergebnis
+        </a>
+        
+        <a href="#lazy-loading-strategie"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#lazy-loading-strategie');">
+            Lazy Loading-Strategie
+        </a>
+        
+        
+
+        
+        <a href="#ordnerstruktur"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#ordnerstruktur');">
+            Ordnerstruktur
+        </a>
+        
+
+        
+        <a href="#kernfunktionen"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#kernfunktionen');">
+            Kernfunktionen
+        </a>
+        
+        
+        <a href="#1-live-monitoring"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#1-live-monitoring');">
+            1. Live-Monitoring
+        </a>
+        
+        <a href="#2-analytik-dashboard-explainable-ai-xai"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#2-analytik-dashboard-explainable-ai-xai');">
+            2. Analytik-Dashboard &amp; Explainable AI (XAI)
+        </a>
+        
+        <a href="#3-klassenverwaltung"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#3-klassenverwaltung');">
+            3. Klassenverwaltung
+        </a>
+        
+        <a href="#4-schulereinladungen"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#4-schulereinladungen');">
+            4. Schülereinladungen
+        </a>
+        
+        
+
+        
+        <a href="#api-client"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#api-client');">
+            API-Client
+        </a>
+        
+        
+        <a href="#type-safe-http-client"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#type-safe-http-client');">
+            Type-Safe HTTP Client
+        </a>
+        
+        
+
+        
+        <a href="#authentifizierung"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#authentifizierung');">
+            Authentifizierung
+        </a>
+        
+        
+        <a href="#firebase-auth-integration"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#firebase-auth-integration');">
+            Firebase Auth Integration
+        </a>
+        
+        
+
+        
+        <a href="#styling"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#styling');">
+            Styling
+        </a>
+        
+        
+        <a href="#tailwind-css-custom-components"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#tailwind-css-custom-components');">
+            Tailwind CSS + Custom Components
+        </a>
+        
+        
+
+        
+        <a href="#performance-optimierungen"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#performance-optimierungen');">
+            Performance-Optimierungen
+        </a>
+        
+        
+        <a href="#1-reactmemo-fur-teure-komponenten"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#1-reactmemo-fur-teure-komponenten');">
+            1. React.memo für teure Komponenten
+        </a>
+        
+        <a href="#2-usememo-fur-teure-berechnungen"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#2-usememo-fur-teure-berechnungen');">
+            2. useMemo für teure Berechnungen
+        </a>
+        
+        <a href="#3-usecallback-fur-event-handler"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#3-usecallback-fur-event-handler');">
+            3. useCallback für Event Handler
+        </a>
+        
+        <a href="#4-virtual-scrolling-fur-groe-listen"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#4-virtual-scrolling-fur-groe-listen');">
+            4. Virtual Scrolling (für große Listen)
+        </a>
+        
+        
+
+        
+        <a href="#testing"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#testing');">
+            Testing
+        </a>
+        
+        
+        <a href="#component-tests-vitest-react-testing-library"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#component-tests-vitest-react-testing-library');">
+            Component Tests (Vitest + React Testing Library)
+        </a>
+        
+        <a href="#api-client-tests"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#api-client-tests');">
+            API Client Tests
+        </a>
+        
+        
+
+        
+        <a href="#build-deployment"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#build-deployment');">
+            Build &amp; Deployment
+        </a>
+        
+        
+        <a href="#development"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#development');">
+            Development
+        </a>
+        
+        <a href="#production-build"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#production-build');">
+            Production Build
+        </a>
+        
+        <a href="#deployment-cloudflare-pages"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#deployment-cloudflare-pages');">
+            Deployment (Cloudflare Pages)
+        </a>
+        
+        
+
+        
+        <a href="#sicherheit"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#sicherheit');">
+            Sicherheit
+        </a>
+        
+        
+        <a href="#csrf-protection"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#csrf-protection');">
+            CSRF Protection
+        </a>
+        
+        <a href="#xss-prevention"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#xss-prevention');">
+            XSS Prevention
+        </a>
+        
+        <a href="#content-security-policy"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#content-security-policy');">
+            Content Security Policy
+        </a>
+        
+        
+
+        
+        <a href="#nachste-schritte"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#nachste-schritte');">
+            Nächste Schritte
+        </a>
+        
+
+        
+        
+        
+        
+
+    </div>
+    <div class="h-12"></div>
+
+</div>
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</main>
+        <footer view-transition-name="footer"
+    class="group-has-[.section-soft]/body:bg-surface/40 3xl:fixed:bg-transparent dark:bg-transparent">
+    <div class="container-wrapper px-4 xl:px-6">
+        <div class="flex h-(--footer-height) items-center justify-between">
+            <div class="text-muted-foreground w-full text-center text-xs leading-loose sm:text-sm">
+                
+                <a href="https://github.com/asiffer/mkdocs-shadcn">shadcn theme</a> provided by
+                <a href="https://github.com/asiffer">@asiffer</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+     
+
+<script src="../search/main.js"></script>
+
+
+    
+
+    <script integrity="sha384-JLNLRFGzvOp0up707XKgSnAjjt1w5BF/+lbeLQvlf6mNwf0m89IXFdpNAk4t6Hcs" src="../js/copy-button.js"></script>
+<script integrity="sha384-JBx6cBEiyhK1KPwZgBHiI6GDaAmvlOxMQFyWAZTEpW5Ifo5XQ2LBcJ61GVOumwF1" src="../js/sidebar.js"></script>
+<script integrity="sha384-fNURFMRt0p/HqXnQnV4+CT9dX1GiU5F0fC3pFbg7gfoANytoUMErSW7suWSBkSuF" src="../js/slider.js"></script>
+<script>updatePygmentsStylesheet();</script>
+    
+    <script>fetchStargazers("https://github.com/Seminarkurs-Lernapp-Mathematik/slam-app");</script>
+    
+    
+    
+    <script type="speculationrules">
+{
+  "prerender": [
+    {
+      "where": {
+          "selector_matches": ["#next-button", "#previous-button"]
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>
